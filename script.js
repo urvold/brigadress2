@@ -52,3 +52,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
   });
 });
+
+
+// Global modal helpers (fallback-safe)
+window.openModal = function(id){
+  var m = document.getElementById(id);
+  if(m){ m.setAttribute('aria-hidden','false'); }
+};
+window.closeModal = function(id){
+  var m = document.getElementById(id);
+  if(m){ m.setAttribute('aria-hidden','true'); }
+};
+
