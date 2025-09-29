@@ -73,3 +73,22 @@ h1,h2,h3{line-height:1.2;margin:0 0 .6rem}h1{font-size:clamp(28px,4.6vw,48px)}h2
 .modal-kv b{display:block;font-size:.85rem;color:#9ad28b;margin-bottom:4px}
 .modal-desc{margin:6px 0 12px 0;line-height:1.55}
 @media (max-width:680px){ .modal-grid{grid-template-columns:1fr} }
+
+/* ===== Modal UX v14.2 ===== */
+.modal{padding:12px}
+.modal-card{max-width:920px; max-height:92vh; overflow:auto; -webkit-overflow-scrolling:touch; padding:16px 18px 18px 18px}
+.modal-card::-webkit-scrollbar{width:10px}
+.modal-card::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);border-radius:8px}
+.modal-card h3{position:sticky; top:0; background:var(--panel); margin:-8px -8px 12px -8px; padding:12px 14px; border-bottom:1px solid var(--stroke); z-index:3; border-top-left-radius:10px; border-top-right-radius:10px}
+.modal-media{display:block;width:100%;height:auto;max-height:45vh;object-fit:cover;border-radius:14px;margin:6px 0 14px 0;box-shadow:0 6px 30px rgba(0,0,0,.25)}
+.modal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:4px 0 16px 0}
+.modal-kv{background:#111519;border:1px solid var(--stroke);border-radius:14px;padding:14px 14px}
+.modal-kv b{display:block;font-size:.86rem;color:#7ddc88;margin-bottom:6px;letter-spacing:.3px}
+.modal-kv span{font-size:1.02rem}
+.modal-desc{margin:8px 2px 14px 2px;line-height:1.65;font-size:1.02rem}
+.modal-close{position:sticky; top:8px; float:right}
+@media (max-width:680px){
+  .modal-card{padding:12px; max-height:92vh}
+  .modal-grid{grid-template-columns:1fr}
+  .modal-kv span{font-size:1rem}
+}
