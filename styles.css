@@ -127,3 +127,15 @@ details p{color:var(--muted)}
   .hero .subtitle{font-size:13px}
   .cta-fixed{right:8px;left:8px;bottom:12px;text-align:center}
 }
+
+/* --- Fix mobile "zoom" / parallax on hero image --- */
+.hero, .hero * { backface-visibility: hidden; transform-style: flat; }
+.hero { contain: paint layout; perspective: none; }
+.hero-bg{ transform: none !important; transition: none !important; object-fit: cover; object-position: center center; }
+@supports (contain-intrinsic-size: 1px 1px){
+  .hero { contain-intrinsic-size: 1px 1px; }
+}
+@media (max-width: 960px){
+  .hero{ min-height: 68vh; }
+  .hero-bg{ position:absolute; inset:0; height:100%; width:100%; }
+}
