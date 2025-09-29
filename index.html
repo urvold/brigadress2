@@ -5,19 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>БригАдрес — Каркасные дома под ключ</title>
   <meta name="description" content="Каркасные дома под ключ в Нижегородской области. Проверенные подрядчики, фиксированные сметы, сопровождение до сдачи.">
-  <link rel="preload" href="assets/hero.jpg" as="image">
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+:root{--bg:#0b0c0e;--panel:#121316;--text:#EAEBED;--muted:#b7bec8;--green:#2BBF5A;--orange:#F1592A;--stroke:#1f2227;--shadow:0 8px 30px rgba(0,0,0,.45)}
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,'Noto Sans',sans-serif;line-height:1.5;overflow-x:hidden;overscroll-behavior-x:none}
+img{max-width:100%;display:block}a{color:var(--green);text-decoration:none}.container{width:min(1120px,92vw);margin:0 auto}
+h1,h2,h3{line-height:1.2;margin:0 0 .6rem}h1{font-size:clamp(28px,4.6vw,48px)}h2{font-size:clamp(22px,3vw,32px)}h3{font-size:clamp(18px,2.2vw,24px)}p{margin:.35rem 0 .8rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.2rem;border-radius:14px;border:1px solid transparent;font-weight:700;transition:transform .15s ease,background .2s ease;box-shadow:var(--shadow)}
+.btn.primary{background:linear-gradient(180deg,var(--green),#1ea64a);color:#fff}.btn.ghost{border-color:var(--stroke);background:transparent;color:var(--text)}
+.logo{height:42px}.logo.small{height:36px}.site-header{position:sticky;top:0;z-index:50;background:rgba(11,12,14,.75);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--stroke)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0;gap:1rem}.brand{display:flex;align-items:center;gap:.6rem;font-weight:800}.brand-text{display:none}
+.nav{display:flex;gap:1rem}.nav a{padding:.5rem .6rem;border-radius:10px}.nav a:hover{background:#15171c}
+.contacts{display:flex;align-items:center;gap:.6rem}.contacts .tel{color:var(--text);border:1px solid var(--stroke);padding:.5rem .7rem;border-radius:12px}
+.icon{display:inline-flex;align-items:center;justify-content:center;padding:.45rem;border:1px solid var(--stroke);border-radius:12px;color:var(--text);background:transparent}.vk-badge{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1px solid var(--stroke);color:#EAEBED;font-weight:900;font-size:12px;letter-spacing:.5px}
+.icon.tg .tg-svg{width:22px;height:22px}.burger{display:none;background:none;border:none;color:var(--text)}.burger span{display:block;width:22px;height:2px;background:var(--text);margin:4px 0}
+.hero{position:relative;min-height:74vh;display:grid;place-items:center;border-bottom:1px solid var(--stroke);overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.65)}
+.hero-overlay{position:absolute;inset:0;background:radial-gradient(50% 50% at 70% 20%, rgba(43,191,90,.2), transparent 55%)}
+.hero-content{position:relative;text-align:center;padding:5rem 0}.hero .subtitle{color:var(--muted);font-size:clamp(14px,1.8vw,18px);margin:10px 0 22px}
+.projects{padding:60px 0}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{border:1px solid var(--stroke);border-radius:16px;overflow:hidden;background:var(--panel);display:flex;flex-direction:column}
+.card img{height:200px;object-fit:cover}.card-body{padding:14px}
+.card-body .actions{display:flex;flex-direction:column;gap:10px;margin-top:10px}.card-body .actions .btn{width:100%;justify-content:center}
+.partners-title{margin-top:28px}
+.carousel{position:relative;margin-top:12px}.car-track{display:flex;overflow:auto;scroll-snap-type:x mandatory;gap:10px;padding-bottom:6px}
+.car-track img{height:220px;border-radius:14px;scroll-snap-align:center;border:1px solid var(--stroke)}
+.car-btn{position:absolute;top:45%;transform:translateY(-50%);background:rgba(0,0,0,.45);border:1px solid var(--stroke);color:#fff;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;cursor:pointer}
+.car-btn.prev{left:-6px}.car-btn.next{right:-6px}
+.why{padding:60px 0;border-top:1px solid var(--stroke);border-bottom:1px solid var(--stroke);background:linear-gradient(180deg,#0b0c0e,#0f1114)}
+.feature{border:1px solid var(--stroke);border-radius:16px;overflow:hidden;margin:12px 0;background:#111416;box-shadow:0 6px 20px rgba(0,0,0,.35)}
+.feature-head{width:100%;text-align:left;background:linear-gradient(180deg,#14171c,#0f1216);color:var(--text);padding:16px 18px;border:none;outline:none;font-weight:800;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.feature-head::after{content:'+';color:#0b0c0e;background:var(--green);width:24px;height:24px;display:inline-grid;place-items:center;border-radius:50%;font-weight:900}
+.feature.open .feature-head::after{content:'–'}
+.feature-body{max-height:0;overflow:hidden;transition:max-height .25s ease,padding .25s ease;padding:0 18px;color:var(--muted)}
+.feature.open .feature-body{max-height:500px;padding:0 18px 16px}
+.reviews{padding:60px 0;border-top:1px solid var(--stroke);border-bottom:1px solid var(--stroke);background:linear-gradient(180deg,#0f1114,#0b0c0e)}
+.reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.review{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--stroke);border-radius:16px;background:var(--panel);padding:12px}
+.avatar{width:56px;height:40px;border-radius:10px;object-fit:cover;border:1px solid var(--stroke)}
+.how{padding:60px 0;border-top:1px solid var(--stroke);border-bottom:1px solid var(--stroke);background:linear-gradient(180deg,#0b0c0e,#0f1114)}
+.how-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:10px}
+.step{border:1px solid var(--stroke);border-radius:16px;background:var(--panel);padding:14px;display:flex;flex-direction:column;gap:8px}
+.step-top{display:flex;align-items:center;gap:8px}.pill{display:inline-block;border:1px solid var(--green);color:var(--green);padding:.2rem .5rem;border-radius:999px;font-size:12px;font-weight:800}
+.lead{padding:60px 0}.lead-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+.badges{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:8px 0 12px;list-style:none}.badges li{border:1px solid var(--green);color:var(--green);padding:.45rem .6rem;border-radius:12px;font-weight:700}
+.mini-reviews{display:flex;gap:10px}.mini{display:flex;align-items:center;gap:8px;border:1px solid var(--stroke);border-radius:12px;padding:6px 8px}.microcopy{color:var(--muted);margin-top:10px}
+.form{border:1px solid var(--stroke);border-radius:16px;background:var(--panel);padding:16px;box-shadow:var(--shadow)}.form label{display:block;margin-bottom:10px;font-weight:700}
+.form input,.form select{width:100%;padding:.8rem;border-radius:12px;border:1px solid var(--stroke);background:#0e1013;color:var(--text);margin-top:6px}
+.form .policy,.form .fallback{font-size:13px;color:var(--muted)}.form button{width:100%;margin-top:8px}
+.faq{padding:60px 0}details{border:1px solid var(--stroke);border-radius:12px;padding:10px 12px;margin:10px 0;background:var(--panel)}details summary{cursor:pointer;font-weight:800;color:var(--text)}details p{color:var(--muted)}
+.footer{padding:30px 0 0;border-top:1px solid var(--stroke);background:#0a0b0c}.foot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding-bottom:12px}.subfoot{border-top:1px solid var(--stroke);padding:12px 0;color:var(--muted);font-size:14px}
+.cta-fixed{position:fixed;right:12px;bottom:14px;background:var(--orange);color:#fff;padding:.9rem 1rem;border-radius:16px;box-shadow:var(--shadow);font-weight:900;z-index:60}
+.modal{z-index:9999}
+@media (max-width:960px){.nav{display:none}.site-header .nav{position:absolute;top:60px;right:12px;background:#0f1114;border:1px solid var(--stroke);border-radius:12px;flex-direction:column;padding:8px;z-index:70}.burger{display:block}.contacts .btn{display:none}.grid{grid-template-columns:repeat(2,1fr)}.reviews-grid{grid-template-columns:1fr}.lead-grid{grid-template-columns:1fr;gap:16px}.hero{min-height:68vh}.hero-content{padding:3.5rem 0}.how-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.contacts .tel{display:none}.grid{grid-template-columns:1fr}.car-btn{display:none}.how-grid{grid-template-columns:1fr}}
+@media (max-width:420px){h1{font-size:26px}.hero .subtitle{font-size:13px}.cta-fixed{right:8px;left:8px;bottom:12px;text-align:center}}
+/* Modals */
+.modal{position:fixed;inset:0;display:none}.modal[aria-hidden="false"]{display:block}.modal-dim{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(2px)}
+.modal-card{position:relative;max-width:720px;margin:8vh auto;background:var(--panel);border:1px solid var(--stroke);border-radius:16px;box-shadow:var(--shadow);padding:18px}
+.modal-card h3{margin-top:0}.modal-close{position:absolute;top:6px;right:8px;border:1px solid var(--stroke);background:#0f1114;color:var(--text);border-radius:10px;padding:.3rem .55rem;font-size:20px;cursor:pointer}
+.modal-desc{color:var(--muted);white-space:pre-wrap}.specs{list-style:none;padding:0;margin:10px 0 14px}.specs li{padding:6px 0;border-bottom:1px dashed var(--stroke)}
+</style>
   <script>
-    // Early global helpers: guaranteed available for inline onclick on "Подробнее"
-    window.openModal = function(id){ var m=document.getElementById(id); if(m){ m.setAttribute('aria-hidden','false'); } };
-    window.closeModal = function(id){ var m=document.getElementById(id); if(m){ m.setAttribute('aria-hidden','true'); } };
+    // Global helpers available immediately
+    window.openModal = function(id){ var m=document.getElementById(id); if(m) m.setAttribute('aria-hidden','false'); };
+    window.closeModal = function(id){ var m=document.getElementById(id); if(m) m.setAttribute('aria-hidden','true'); };
   </script>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <img src="assets/logo.png" alt="БригАдрес" class="logo"/>
+        <img src="assets/logo.png?v=131" alt="БригАдрес" class="logo"/>
         <span class="brand-text">БригАдрес</span>
       </div>
       <nav class="nav">
@@ -44,7 +102,7 @@
   </header>
 
   <section class="hero" id="top">
-    <img src="assets/hero.jpg" alt="Каркасный дом" class="hero-bg" />
+    <img src="assets/hero.jpg?v=131" alt="Каркасный дом" class="hero-bg" />
     <div class="hero-overlay"></div>
     <div class="container hero-content">
       <h1>КАРКАСНЫЕ ДОМА ПОД КЛЮЧ<br/>в Нижегородской области</h1>
@@ -58,46 +116,46 @@
       <h2>Готовые проекты</h2>
       <div class="grid">
         <article class="card">
-          <img src="assets/projects/barn123.jpg" alt="Барн 123">
+          <img src="assets/projects/barn123.jpg?v=131" alt="Барн 123">
           <div class="card-body">
             <h3>Барн 123</h3>
             <p>123 м² • 3 спальни • 2 санузла</p>
             <div class="actions">
               <a href="#lead-form" class="btn ghost cta">Получить сметы</a>
-              <a href="javascript:void(0)" class="btn ghost more" data-open="m-barn123" onclick="openModal('m-barn123')">Подробнее</a>
+              <a href="javascript:void(0)" class="btn ghost more" onclick="openModal('m-barn123')">Подробнее</a>
             </div>
           </div>
         </article>
         <article class="card">
-          <img src="assets/projects/loft61.jpg" alt="Лофт 61">
+          <img src="assets/projects/loft61.jpg?v=131" alt="Лофт 61">
           <div class="card-body">
             <h3>Лофт 61</h3>
             <p>61 м² • 2 спальни • 1 санузел</p>
             <div class="actions">
               <a href="#lead-form" class="btn ghost cta">Получить сметы</a>
-              <a href="javascript:void(0)" class="btn ghost more" data-open="m-loft61" onclick="openModal('m-loft61')">Подробнее</a>
+              <a href="javascript:void(0)" class="btn ghost more" onclick="openModal('m-loft61')">Подробнее</a>
             </div>
           </div>
         </article>
         <article class="card">
-          <img src="assets/projects/barn145.jpg" alt="Барн 145">
+          <img src="assets/projects/barn145.jpg?v=131" alt="Барн 145">
           <div class="card-body">
             <h3>Барн 145</h3>
             <p>145 м² • 4 спальни • 2 санузла</p>
             <div class="actions">
               <a href="#lead-form" class="btn ghost cta">Получить сметы</a>
-              <a href="javascript:void(0)" class="btn ghost more" data-open="m-barn145" onclick="openModal('m-barn145')">Подробнее</a>
+              <a href="javascript:void(0)" class="btn ghost more" onclick="openModal('m-barn145')">Подробнее</a>
             </div>
           </div>
         </article>
         <article class="card">
-          <img src="assets/projects/right103.jpg" alt="Райт 103">
+          <img src="assets/projects/right103.jpg?v=131" alt="Райт 103">
           <div class="card-body">
             <h3>Райт 103</h3>
             <p>103 м² • 3 спальни • 1 санузел</p>
             <div class="actions">
               <a href="#lead-form" class="btn ghost cta">Получить сметы</a>
-              <a href="javascript:void(0)" class="btn ghost more" data-open="m-right103" onclick="openModal('m-right103')">Подробнее</a>
+              <a href="javascript:void(0)" class="btn ghost more" onclick="openModal('m-right103')">Подробнее</a>
             </div>
           </div>
         </article>
@@ -107,12 +165,12 @@
       <div class="carousel" id="partners-carousel" aria-label="Также от наших подрядчиков">
         <button class="car-btn prev" aria-label="Назад">‹</button>
         <div class="car-track">
-          <img src="assets/partners/1.jpg" alt="Подрядчик 1">
-          <img src="assets/partners/2.jpg" alt="Подрядчик 2">
-          <img src="assets/partners/3.jpg" alt="Подрядчик 3">
-          <img src="assets/partners/4.jpg" alt="Подрядчик 4">
-          <img src="assets/partners/5.jpg" alt="Подрядчик 5">
-          <img src="assets/partners/6.jpg" alt="Подрядчик 6">
+          <img src="assets/partners/1.jpg?v=131" alt="Подрядчик 1">
+          <img src="assets/partners/2.jpg?v=131" alt="Подрядчик 2">
+          <img src="assets/partners/3.jpg?v=131" alt="Подрядчик 3">
+          <img src="assets/partners/4.jpg?v=131" alt="Подрядчик 4">
+          <img src="assets/partners/5.jpg?v=131" alt="Подрядчик 5">
+          <img src="assets/partners/6.jpg?v=131" alt="Подрядчик 6">
         </div>
         <button class="car-btn next" aria-label="Вперёд">›</button>
       </div>
@@ -146,19 +204,19 @@
       <h2>Отзывы</h2>
       <div class="reviews-grid">
         <article class="review">
-          <img src="assets/reviews/1.jpg" alt="Фото клиента" class="avatar">
+          <img src="assets/reviews/1.jpg?v=131" alt="Фото клиента" class="avatar">
           <p>«Выбирали между несколькими подрядчиками — команда БригАдрес быстро предоставила 3 предложения, помогла сравнить сметы и объяснила отличия. Дом сдали вовремя, без доплат. Рекомендуем!» — <b>Алексей, Бор</b></p>
         </article>
         <article class="review">
-          <img src="assets/reviews/2.jpg" alt="Фото клиента" class="avatar">
+          <img src="assets/reviews/2.jpg?v=131" alt="Фото клиента" class="avatar">
           <p>«Понравилась прозрачность: фиксированная цена в договоре, фотоотчёты каждый этап. Теплоизоляция реально топ — зимой очень экономим на отоплении.» — <b>Марина, Нижний Новгород</b></p>
         </article>
         <article class="review">
-          <img src="assets/reviews/3.jpg" alt="Фото клиента" class="avatar">
+          <img src="assets/reviews/3.jpg?v=131" alt="Фото клиента" class="avatar">
           <p>«Подобрали подрядчика под наш нестандартный участок. Проект доработали, сделали удобные решения по хранению. Работали чисто, после себя всё убрали.» — <b>Игорь, Павлово</b></p>
         </article>
         <article class="review">
-          <img src="assets/reviews/4.jpg" alt="Фото клиента" class="avatar">
+          <img src="assets/reviews/4.jpg?v=131" alt="Фото клиента" class="avatar">
           <p>«От заявки до заселения прошло меньше трёх месяцев. Контроль качества на каждом этапе — видно, что люди переживают за результат.» — <b>Анна, Дзержинск</b></p>
         </article>
       </div>
@@ -205,11 +263,11 @@
         </ul>
         <div class="mini-reviews">
           <div class="mini">
-            <img src="assets/icons/avatar.svg" class="avatar" alt="">
+            <img src="assets/icons/avatar.svg?v=131" class="avatar" alt="">
             <span>«Ответили в тот же день!» — Ольга</span>
           </div>
           <div class="mini">
-            <img src="assets/icons/avatar.svg" class="avatar" alt="">
+            <img src="assets/icons/avatar.svg?v=131" class="avatar" alt="">
             <span>«Помогли сравнить сметы» — Роман</span>
           </div>
         </div>
@@ -261,38 +319,11 @@
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container foot-grid">
-      <div class="foot-col">
-        <img src="assets/logo.png" class="logo small" alt="БригАдрес">
-        <p>ИНН 470206635264<br>ОГРН 325470400100411</p>
-      </div>
-      <div class="foot-col">
-        <h4>Контакты</h4>
-        <p><a href="tel:+79334191597">8 (933) 419-15-97</a><br>
-        <a href="mailto:brigadres@mail.ru">brigadres@mail.ru</a><br>
-        <a href="https://t.me/BrigAdres" target="_blank">@BrigAdres</a></p>
-      </div>
-      <div class="foot-col">
-        <h4>Документы</h4>
-        <p><a href="https://vk.com/brigadres_club" target="_blank">Наша группа ВКонтакте</a><br>
-        <a href="https://disk.yandex.ru/d/QJ3SUIqIjdtrEg" target="_blank">Политика конфиденциальности</a><br>
-        <a href="https://disk.yandex.ru/d/ttlyl_xgB4KdQw" target="_blank">Публичная оферта</a></p>
-      </div>
-    </div>
-    <div class="subfoot">
-      <div class="container">
-        <span>© БригАдрес, <span id="year">2025</span>. Все права защищены.</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Modals -->
-
-  <div class="modal" id="m-123" aria-hidden="true">
-    <div class="modal-dim" data-close="m-123" onclick="closeModal('m-123')"></div>
+  <!-- Fixed-ID Modals -->
+  <div class="modal" id="m-right103" aria-hidden="true">
+    <div class="modal-dim" data-close="m-right103" onclick="closeModal('m-right103')"></div>
     <div class="modal-card" role="dialog" aria-modal="true">
-      <button class="modal-close" data-close="m-123" onclick="closeModal('m-123')" aria-label="Закрыть">×</button>
+      <button class="modal-close" data-close="m-right103" onclick="closeModal('m-right103')" aria-label="Закрыть">×</button>
       <h3>Барн 123 — детали проекта</h3>
       <p class='modal-desc'>Дом в стиле Барнхаус - тренд каркасного строительства. Этот проект сочетает в себе стиль, красоту и удобство. Планировка дома включает в себя 3 спальные комнаты, 2 сан.узла, первый этаж организован так, что из кухни-гостинной есть выход на террасу, а в прихожей есть пространство для организации просторной и удобной входной группы.</p>
       <ul class='specs'><li><b>Цена:</b> от 4 673 639 р.</li>
@@ -304,10 +335,10 @@
     </div>
   </div>
 
-  <div class="modal" id="m-61" aria-hidden="true">
-    <div class="modal-dim" data-close="m-61" onclick="closeModal('m-61')"></div>
+  <div class="modal" id="m-right103" aria-hidden="true">
+    <div class="modal-dim" data-close="m-right103" onclick="closeModal('m-right103')"></div>
     <div class="modal-card" role="dialog" aria-modal="true">
-      <button class="modal-close" data-close="m-61" onclick="closeModal('m-61')" aria-label="Закрыть">×</button>
+      <button class="modal-close" data-close="m-right103" onclick="closeModal('m-right103')" aria-label="Закрыть">×</button>
       <h3>Лофт 61 — детали проекта</h3>
       <p class='modal-desc'>Дом, площадью 61 м2 будет изюминкой вашего поселка или СНТ, ведь небольшой, но стильный, он привлекает внимание не зависимо от наружной отделки. Прекрасное решения для семьи, ведь в нем две спальные и просторная кухня-гостинная.</p>
       <ul class='specs'><li><b>Цена:</b> от 3 428 079 р.</li>
@@ -319,10 +350,10 @@
     </div>
   </div>
 
-  <div class="modal" id="m-145" aria-hidden="true">
-    <div class="modal-dim" data-close="m-145" onclick="closeModal('m-145')"></div>
+  <div class="modal" id="m-right103" aria-hidden="true">
+    <div class="modal-dim" data-close="m-right103" onclick="closeModal('m-right103')"></div>
     <div class="modal-card" role="dialog" aria-modal="true">
-      <button class="modal-close" data-close="m-145" onclick="closeModal('m-145')" aria-label="Закрыть">×</button>
+      <button class="modal-close" data-close="m-right103" onclick="closeModal('m-right103')" aria-label="Закрыть">×</button>
       <h3>Барн 145 — детали проекта</h3>
       <p class='modal-desc'>Планировка этого проекта организована так, что в доме есть 2 сан. узла, удобная входная группа, которую можно оформить как котельную или гардероб, а размеры кухни-гостинной в 31м2 дают волю для работы дизайнеров. Общая площадь дома с террасой занимает 145 м2, а также кроме террасы 27м2 у дома есть достаточно большое крыльцо.</p>
       <ul class='specs'><li><b>Цена:</b> от 6 060 143 р.</li>
@@ -334,10 +365,10 @@
     </div>
   </div>
 
-  <div class="modal" id="m-i103" aria-hidden="true">
-    <div class="modal-dim" data-close="m-i103" onclick="closeModal('m-i103')"></div>
+  <div class="modal" id="m-right103" aria-hidden="true">
+    <div class="modal-dim" data-close="m-right103" onclick="closeModal('m-right103')"></div>
     <div class="modal-card" role="dialog" aria-modal="true">
-      <button class="modal-close" data-close="m-i103" onclick="closeModal('m-i103')" aria-label="Закрыть">×</button>
+      <button class="modal-close" data-close="m-right103" onclick="closeModal('m-right103')" aria-label="Закрыть">×</button>
       <h3>Райт 103 — детали проекта</h3>
       <p class='modal-desc'>Общая площадь дома 103 м2, а планировка предполагает наличие не только 3-х просторных спален, но и 2-х сан. узлов и котельной для оборудования (которая может стать и кладовкой). Стандартный размер кухни-гостинной в 25 м2 не отнимает пространства, но в то же время позволит комфортно организовать кухонное пространство.</p>
       <ul class='specs'><li><b>Цена:</b> от 4 741 157 р.</li>
@@ -351,6 +382,56 @@
 
   <a href="#lead-form" class="cta-fixed">Получить 3–4 предложения</a>
 
-  <script src="script.js"></script>
+  <script>
+  
+document.addEventListener('DOMContentLoaded', ()=>{
+  // burger
+  const burger=document.querySelector('.burger'); const nav=document.querySelector('.nav');
+  if(burger&&nav){ burger.addEventListener('click',()=>{ nav.style.display=(nav.style.display==='flex'?'none':'flex'); if(nav.style.display==='flex'){nav.style.flexDirection='column'} }); }
+
+  // accordion
+  document.querySelectorAll('.feature').forEach(f=>{
+    const h=f.querySelector('.feature-head');
+    h.addEventListener('click',()=> f.classList.toggle('open'));
+  });
+
+  // carousel
+  const car=document.getElementById('partners-carousel');
+  if(car){
+    const track=car.querySelector('.car-track');
+    const prev=car.querySelector('.prev'); const next=car.querySelector('.next');
+    prev&&prev.addEventListener('click',()=> track.scrollBy({left:-400,behavior:'smooth'}));
+    next&&next.addEventListener('click',()=> track.scrollBy({left: 400,behavior:'smooth'}));
+  }
+
+  // Delegation (secondary safety net)
+  document.addEventListener('click',(e)=>{
+    const opener=e.target.closest('[data-open]');
+    if(opener){
+      e.preventDefault();
+      const id=opener.getAttribute('data-open');
+      if(id) { window.openModal && window.openModal(id); }
+      return;
+    }
+    const closer=e.target.closest('[data-close]');
+    if(closer){
+      const id=closer.getAttribute('data-close');
+      if(id) { window.closeModal && window.closeModal(id); }
+      return;
+    }
+  });
+
+  // Esc to close
+  document.addEventListener('keydown',(e)=>{
+    if(e.key==='Escape'){
+      document.querySelectorAll('.modal').forEach(m=>m.setAttribute('aria-hidden','true'));
+    }
+  });
+
+  // year
+  const y=document.getElementById('year'); if(y){ y.textContent=(new Date()).getFullYear(); }
+});
+
+  </script>
 </body>
 </html>
