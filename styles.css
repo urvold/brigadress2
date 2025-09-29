@@ -52,3 +52,9 @@ h1,h2,h3{line-height:1.2;margin:0 0 .6rem}h1{font-size:clamp(28px,4.6vw,48px)}h2
 .card-body .btn.more{margin-top:8px}
 /* Make modal overlay on top of everything */
 .modal{z-index:9999}
+
+/* Actions layout in cards */
+.card-body .actions{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+.card-body .actions .btn{width:100%;justify-content:center}
+/* Make sure modals are on top */
+.modal{z-index:9999}

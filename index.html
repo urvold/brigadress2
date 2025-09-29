@@ -53,14 +53,17 @@
   <section class="projects" id="projects">
     <div class="container">
       <h2>Готовые проекты</h2>
+      
       <div class="grid">
         <article class="card">
           <img src="assets/projects/barn123.jpg" alt="Барн 123">
           <div class="card-body">
             <h3>Барн 123</h3>
             <p>123 м² • 3 спальни • 2 санузла</p>
-            <a href="#lead-form" class="btn ghost">Получить сметы</a>
-            <a href="javascript:void(0)" class="btn ghost more" data-open="m-barn123" data-open="m-barn123" data-open="m-loft61" data-open="m-barn145" data-open="m-right103">Подробнее</a>
+            <div class="actions">
+              <a href="#lead-form" class="btn ghost cta">Получить сметы</a>
+              <a href="javascript:void(0)" class="btn ghost more" data-open="m-barn123">Подробнее</a>
+            </div>
           </div>
         </article>
         <article class="card">
@@ -68,8 +71,10 @@
           <div class="card-body">
             <h3>Лофт 61</h3>
             <p>61 м² • 2 спальни • 1 санузел</p>
-            <a href="#lead-form" class="btn ghost">Получить сметы</a>
-            <a href="javascript:void(0)" class="btn ghost more" data-open="m-loft61" data-open="m-barn123" data-open="m-loft61" data-open="m-barn145" data-open="m-right103">Подробнее</a>
+            <div class="actions">
+              <a href="#lead-form" class="btn ghost cta">Получить сметы</a>
+              <a href="javascript:void(0)" class="btn ghost more" data-open="m-loft61">Подробнее</a>
+            </div>
           </div>
         </article>
         <article class="card">
@@ -77,8 +82,10 @@
           <div class="card-body">
             <h3>Барн 145</h3>
             <p>145 м² • 4 спальни • 2 санузла</p>
-            <a href="#lead-form" class="btn ghost">Получить сметы</a>
-            <a href="javascript:void(0)" class="btn ghost more" data-open="m-barn145" data-open="m-barn123" data-open="m-loft61" data-open="m-barn145" data-open="m-right103">Подробнее</a>
+            <div class="actions">
+              <a href="#lead-form" class="btn ghost cta">Получить сметы</a>
+              <a href="javascript:void(0)" class="btn ghost more" data-open="m-barn145">Подробнее</a>
+            </div>
           </div>
         </article>
         <article class="card">
@@ -86,11 +93,14 @@
           <div class="card-body">
             <h3>Райт 103</h3>
             <p>103 м² • 3 спальни • 1 санузел</p>
-            <a href="#lead-form" class="btn ghost">Получить сметы</a>
-            <a href="javascript:void(0)" class="btn ghost more" data-open="m-right103" data-open="m-barn123" data-open="m-loft61" data-open="m-barn145" data-open="m-right103">Подробнее</a>
+            <div class="actions">
+              <a href="#lead-form" class="btn ghost cta">Получить сметы</a>
+              <a href="javascript:void(0)" class="btn ghost more" data-open="m-right103">Подробнее</a>
+            </div>
           </div>
         </article>
       </div>
+
 
       <h3 class="partners-title">Также от наших партнёров</h3>
       <div class="carousel" id="partners-carousel" aria-label="Также от наших партнёров">
@@ -284,8 +294,6 @@
 
   <!-- Modals -->
 
-  <!-- Project Modals (rebuilt) -->
-
   <div class="modal" id="m-123" aria-hidden="true">
     <div class="modal-dim" data-close="m-123"></div>
     <div class="modal-card" role="dialog" aria-modal="true">
@@ -301,7 +309,6 @@
     </div>
   </div>
 
-
   <div class="modal" id="m-61" aria-hidden="true">
     <div class="modal-dim" data-close="m-61"></div>
     <div class="modal-card" role="dialog" aria-modal="true">
@@ -310,13 +317,12 @@
       <p class="modal-desc">Дом, площадью 61 м2 будет изюминкой вашего поселка или СНТ, ведь небольшой, но стильный, он привлекает внимание не зависимо от наружной отделки. Прекрасное решения для семьи, ведь в нем две спальные и просторная кухня-гостинная.</p>
       <ul class="specs"><li><b>Цена:</b> от 3 428 079 р.</li>
 <li><b>Площадь:</b> 61 м²</li>
-<li><b>Комнаты:</b> 2 спальни, 1 санузла</li>
+<li><b>Комнаты:</b> 2 спальни, 1 санузел</li>
 <li><b>Ориентировочно:</b> ~3.6 млн руб</li>
 <li><b>Срок сдачи:</b> 3 месяца</li></ul>
       <a href="#lead-form" class="btn primary">Получить сметы</a>
     </div>
   </div>
-
 
   <div class="modal" id="m-145" aria-hidden="true">
     <div class="modal-dim" data-close="m-145"></div>
@@ -333,7 +339,6 @@
     </div>
   </div>
 
-
   <div class="modal" id="m-i103" aria-hidden="true">
     <div class="modal-dim" data-close="m-i103"></div>
     <div class="modal-card" role="dialog" aria-modal="true">
@@ -348,7 +353,6 @@
       <a href="#lead-form" class="btn primary">Получить сметы</a>
     </div>
   </div>
-
 <a href="#lead-form" class="cta-fixed">Получить 3–4 предложения</a>
 
   <script src="script.js"></script>
