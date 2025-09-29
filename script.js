@@ -19,48 +19,30 @@ document.addEventListener('DOMContentLoaded', ()=>{
     next&&next.addEventListener('click',()=> track.scrollBy({left: 400,behavior:'smooth'}));
   }
 
-  // modal delegation
+  // Delegation (secondary safety net)
   document.addEventListener('click',(e)=>{
-    const more=e.target.closest('a.more');
-    if(more){ e.preventDefault(); }
     const opener=e.target.closest('[data-open]');
     if(opener){
       e.preventDefault();
       const id=opener.getAttribute('data-open');
-      const m=document.getElementById(id);
-      if(m){ m.setAttribute('aria-hidden','false'); }
+      if(id) { window.openModal && window.openModal(id); }
       return;
     }
     const closer=e.target.closest('[data-close]');
     if(closer){
       const id=closer.getAttribute('data-close');
-      const m=document.getElementById(id);
-      if(m){ m.setAttribute('aria-hidden','true'); }
-      return;
-    }
-    const dim=e.target.closest('.modal-dim');
-    if(dim){
-      const id=dim.getAttribute('data-close');
-      const m=document.getElementById(id);
-      if(m){ m.setAttribute('aria-hidden','true'); }
+      if(id) { window.closeModal && window.closeModal(id); }
       return;
     }
   });
+
+  // Esc to close
   document.addEventListener('keydown',(e)=>{
     if(e.key==='Escape'){
       document.querySelectorAll('.modal').forEach(m=>m.setAttribute('aria-hidden','true'));
     }
   });
+
+  // year
+  const y=document.getElementById('year'); if(y){ y.textContent=(new Date()).getFullYear(); }
 });
-
-
-// Global modal helpers (fallback-safe)
-window.openModal = function(id){
-  var m = document.getElementById(id);
-  if(m){ m.setAttribute('aria-hidden','false'); }
-};
-window.closeModal = function(id){
-  var m = document.getElementById(id);
-  if(m){ m.setAttribute('aria-hidden','true'); }
-};
-
