@@ -57,3 +57,12 @@ h1,h2,h3{line-height:1.2;margin:0 0 .6rem}h1{font-size:clamp(28px,4.6vw,48px)}h2
 .modal-card{position:relative;max-width:720px;margin:8vh auto;background:var(--panel);border:1px solid var(--stroke);border-radius:16px;box-shadow:var(--shadow);padding:18px}
 .modal-card h3{margin-top:0}.modal-close{position:absolute;top:6px;right:8px;border:1px solid var(--stroke);background:#0f1114;color:var(--text);border-radius:10px;padding:.3rem .55rem;font-size:20px;cursor:pointer}
 .modal-desc{color:var(--muted);white-space:pre-wrap}.specs{list-style:none;padding:0;margin:10px 0 14px}.specs li{padding:6px 0;border-bottom:1px dashed var(--stroke)}
+
+/* PURE CSS MODALS via :target */
+.modal{position:fixed;inset:0;display:none;z-index:9999}
+.modal:target{display:block}
+.modal-dim{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(2px)}
+.modal-card{position:relative;max-width:720px;margin:8vh auto;background:var(--panel);border:1px solid var(--stroke);border-radius:16px;box-shadow:var(--shadow);padding:18px}
+.modal-close{position:absolute;top:6px;right:8px;border:1px solid var(--stroke);background:#0f1114;color:var(--text);border-radius:10px;padding:.3rem .55rem;font-size:20px;text-decoration:none}
+.card-body .actions{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+.card-body .actions .btn{width:100%;justify-content:center}
