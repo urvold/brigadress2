@@ -23,10 +23,10 @@ a{color:inherit}
 .icon .vk-badge{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid var(--stroke);border-radius:999px}
 .tg .tg-svg{width:28px;height:28px}
 
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:14px;border:1px solid var(--stroke);text-decoration:none;font-weight:700}
-.btn.primary{background:var(--green);color:#0a0d10;border-color:transparent}
-.btn.ghost{background:#0e1114}
-.btn.orange{background:var(--orange);color:#0a0d10;border-color:transparent}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:14px;border:1px solid var(--stroke);text-decoration:none;font-weight:700;color:#fff}
+.btn.primary{background:var(--green);color:#fff;border-color:transparent}
+.btn.ghost{background:#0e1114;color:#fff}
+.btn.orange{background:var(--orange);color:#fff;border-color:transparent}
 
 .hero{position:relative;min-height:66vh;display:grid;place-items:center;border-bottom:1px solid var(--stroke)}
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:none}
@@ -42,14 +42,13 @@ a{color:inherit}
 .card-body{padding:12px 14px}
 .card-body h3{margin:0 0 6px}
 .card-body p{margin:0 0 6px;color:var(--muted)}
-.price{font-weight:800;color:#9bd3a6;margin-bottom:8px}
-.actions{display:flex;flex-direction:column;gap:10px}
+.price{display:inline-block;font-weight:800;color:#9bd3a6;margin-bottom:8px;padding:4px 8px;border:1px dashed #274734;border-radius:8px;background:#0b1210}
 
 .partners-title{margin:28px 0 10px}
 .carousel{position:relative;border:1px solid var(--stroke);border-radius:16px;padding:10px}
 .car-track{display:grid;grid-auto-flow:column;gap:10px;overflow:auto;scroll-snap-type:x mandatory}
 .car-track img{height:160px;width:auto;border-radius:10px;scroll-snap-align:center;border:1px solid var(--stroke)}
-.car-btn{position:absolute;top:50%;transform:translateY(-50%);border:1px solid var(--stroke);background:#0d1115;border-radius:12px;padding:6px 10px}
+.car-btn{position:absolute;top:50%;transform:translateY(-50%);border:1px solid var(--stroke);background:#0d1115;border-radius:12px;padding:6px 10px;color:#fff}
 .car-btn.prev{left:10px}.car-btn.next{right:10px}
 
 .why{padding:42px 0;border-top:1px solid var(--stroke)}
@@ -63,25 +62,34 @@ a{color:inherit}
 .accordion .acc-body{padding:0 18px 16px;color:var(--text);opacity:.9;line-height:1.6}
 
 .reviews{padding:42px 0;border-top:1px solid var(--stroke)}
-.reviews-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.review{background:var(--panel);border:1px solid var(--stroke);border-radius:16px;overflow:hidden;padding:12px;display:grid;grid-template-columns:110px 1fr;gap:10px}
-.review .avatar{width:100%;height:100%;object-fit:cover;border-radius:12px}
+.reviews-list{display:flex;flex-direction:column;gap:12px}
+.review-row{display:flex;align-items:flex-start;gap:12px;background:var(--panel);border:1px solid var(--stroke);border-radius:16px;padding:12px}
+.review-row img.avatar{width:72px;height:54px;object-fit:cover;border-radius:10px;flex:0 0 auto}
+.review-row b{font-weight:800}
 
 .how{padding:42px 0;border-top:1px solid var(--stroke)}
 .how-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
 .step{background:var(--panel);border:1px solid var(--stroke);border-radius:16px;padding:14px}
+.pill{display:inline-block;border:1px solid var(--green);color:var(--green);border-radius:999px;padding:4px 8px;font-size:.85rem;opacity:.95;margin-bottom:6px}
 
 .lead{padding:42px 0;border-top:1px solid var(--stroke)}
 .lead-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
 .badges{display:flex;gap:8px;list-style:none;padding:0;margin:10px 0 12px 0}
 .badge{border:1px solid var(--green);color:var(--green);border-radius:999px;padding:6px 12px;font-weight:700}
+.mini{display:flex;align-items:center;gap:8px;color:var(--muted)}
+.mini img{width:28px;height:28px;border-radius:6px}
 .form{background:var(--panel);border:1px solid var(--stroke);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px}
-.form input,.form select{width:100%;padding:12px;border-radius:12px;border:1px solid var(--stroke);background:#0b0f13;color:var(--text)}
+.form input,.form select{width:100%;padding:12px;border-radius:12px;border:1px solid var(--stroke);background:#0b0f13;color:#fff}
 
 .faq{padding:42px 0;border-top:1px solid var(--stroke)}
 .faq details{background:var(--panel);border:1px solid var(--stroke);border-radius:14px;padding:10px;margin:8px 0}
 
-.cta-fixed{position:fixed;right:18px;bottom:18px;background:var(--orange);color:#0b0f11;border-radius:999px;padding:14px 18px;text-decoration:none;font-weight:800;box-shadow:var(--shadow);z-index:60}
+.footer{border-top:1px solid var(--stroke);background:#0b0f13;padding:24px 0;margin-top:20px}
+.footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:16px}
+.footer a{color:#9bd3a6;text-decoration:none}
+.footer small{color:var(--muted)}
+
+.cta-fixed{position:fixed;right:18px;bottom:18px;background:var(--orange);color:#fff;border-radius:999px;padding:14px 18px;text-decoration:none;font-weight:800;box-shadow:var(--shadow);z-index:60}
 
 .modal{position:fixed;inset:0;display:none;z-index:70}
 .modal:target{display:block}
@@ -94,13 +102,13 @@ a{color:inherit}
 .modal-kv b{display:block;font-size:.86rem;color:#7ddc88;margin-bottom:6px}
 .modal-kv span{font-size:1.02rem}
 .modal-desc{margin:8px 2px 14px 2px;line-height:1.65;font-size:1.02rem}
-.modal-close{position:sticky;top:8px;right:8px;float:right;z-index:10;font-size:20px;line-height:1;padding:.35rem .6rem;border-radius:10px;background:#0e1114;border:1px solid var(--stroke);text-decoration:none;color:var(--text)}
+.modal-close{position:sticky;top:8px;right:8px;float:right;z-index:10;font-size:20px;line-height:1;padding:.35rem .6rem;border-radius:10px;background:#0e1114;border:1px solid var(--stroke);text-decoration:none;color:#fff}
 
 @media (max-width:1024px){
   .grid{grid-template-columns:repeat(2,1fr)}
   .how-grid{grid-template-columns:repeat(2,1fr)}
-  .reviews-grid{grid-template-columns:repeat(2,1fr)}
   .lead-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
   .hero h1{font-size:32px}
 }
 @media (max-width:560px){
