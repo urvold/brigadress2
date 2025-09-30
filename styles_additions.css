@@ -1,0 +1,23 @@
+/* === v14.5 PATCH: Modal close & Accordion === */
+.modal-close{
+  position: sticky; top: 8px; right: 8px; float: right; z-index: 10;
+  font-size: 20px; line-height: 1; padding: .4rem .65rem;
+  border-radius: 10px; background: #0e1114; border: 1px solid var(--stroke);
+  text-decoration: none; color: var(--text);
+}
+@media (max-width:720px){
+  .modal-close{ font-size: 22px; padding: .5rem .75rem; }
+}
+
+.why .subtitle{ color: var(--text-muted); margin-top: 8px; max-width: 960px; }
+.accordion{ display:flex; flex-direction:column; gap:12px; margin-top:16px; }
+.accordion details{ background:#0f1317; border:1px solid var(--stroke); border-radius:16px; overflow:hidden; }
+.accordion summary{ list-style:none; cursor:pointer; padding:16px 18px; font-weight:700; display:flex; align-items:center; gap:10px; }
+.accordion summary::-webkit-details-marker{ display:none; }
+.accordion .acc-body{ padding:0 18px 18px 18px; color:var(--text); opacity:.9; line-height:1.6; }
+.acc-num{ width:28px; height:28px; border-radius:50%; border:1px solid var(--stroke); display:inline-flex; align-items:center; justify-content:center; font-size:.9rem; opacity:.85; }
+.acc-title{ flex:1; }
+@media (max-width:720px){
+  .accordion summary{ padding:14px 16px; }
+  .accordion .acc-body{ padding:0 16px 16px; }
+}
