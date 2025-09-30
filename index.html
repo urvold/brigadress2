@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>БригАдрес — Каркасные дома под ключ</title>
   <meta name="description" content="Каркасные дома под ключ в Нижегородской области. Подберём проверенного подрядчика и сопроводим стройку.">
-  <link rel="preload" href="assets/icons/avatar.svg" as="image" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -28,7 +27,6 @@
         <a class="icon vk" title="VK" href="https://vk.com/brigadres_club" target="_blank" aria-label="VK"><span class="vk-badge">VK</span></a>
         <a class="btn primary" href="#lead-form">Отправить заявку</a>
       </div>
-      <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
     </div>
   </header>
 
@@ -102,10 +100,6 @@
           <img src="assets/partners/4.jpg" alt="Партнёр 4">
           <img src="assets/partners/5.jpg" alt="Партнёр 5">
           <img src="assets/partners/6.jpg" alt="Партнёр 6">
-          <img src="assets/partners/7.jpg" alt="Партнёр 7">
-          <img src="assets/partners/8.jpg" alt="Партнёр 8">
-          <img src="assets/partners/9.jpg" alt="Партнёр 9">
-          <img src="assets/partners/10.jpg" alt="Партнёр 10">
         </div>
         <button class="car-btn next" aria-label="Вперёд">›</button>
       </div>
@@ -200,7 +194,7 @@
         <div class="modal-kv"><b>Планировка</b><span>3 спальни, 2 санузла</span></div>
         <div class="modal-kv"><b>Срок</b><span>Обычно 1,5–3 месяца</span></div>
       </div>
-      <p class="modal-desc">Описание проекта, комплектация, материалы и особенности. Замените на ваш текст из «Детали проектов.txt».</p>
+      <p class="modal-desc">Описание проекта, комплектация, материалы и особенности.</p>
       <a href="#lead-form" class="btn primary">Получить сметы</a>
     </div>
   </div>
@@ -217,7 +211,7 @@
         <div class="modal-kv"><b>Планировка</b><span>2 спальни, 1 санузел</span></div>
         <div class="modal-kv"><b>Срок</b><span>Обычно 1,5–3 месяца</span></div>
       </div>
-      <p class="modal-desc">Описание проекта. Замените на ваш текст из «Детали проектов.txt».</p>
+      <p class="modal-desc">Описание проекта.</p>
       <a href="#lead-form" class="btn primary">Получить сметы</a>
     </div>
   </div>
@@ -234,7 +228,7 @@
         <div class="modal-kv"><b>Планировка</b><span>4 спальни, 2 санузла</span></div>
         <div class="modal-kv"><b>Срок</b><span>Обычно 1,5–3 месяца</span></div>
       </div>
-      <p class="modal-desc">Описание проекта. Замените на ваш текст из «Детали проектов.txt».</p>
+      <p class="modal-desc">Описание проекта.</p>
       <a href="#lead-form" class="btn primary">Получить сметы</a>
     </div>
   </div>
@@ -251,7 +245,7 @@
         <div class="modal-kv"><b>Планировка</b><span>3 спальни, 1 санузел</span></div>
         <div class="modal-kv"><b>Срок</b><span>Обычно 1,5–3 месяца</span></div>
       </div>
-      <p class="modal-desc">Описание проекта. Замените на ваш текст из «Детали проектов.txt».</p>
+      <p class="modal-desc">Описание проекта.</p>
       <a href="#lead-form" class="btn primary">Получить сметы</a>
     </div>
   </div>
@@ -259,14 +253,12 @@
   <a href="#lead-form" class="cta-fixed">Получить 3–4 предложения</a>
 
   <script>
-  // ESC to close :target modal
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape'){
-      if(location.hash && location.hash.startsWith('#m-')){
+    // ESC to close :target modals (без внешних библиотек — работает на GitHub Pages)
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && location.hash && location.hash.startsWith('#m-')){
         location.hash = '#projects';
       }
-    }
-  });
+    });
   </script>
 </body>
 </html>
