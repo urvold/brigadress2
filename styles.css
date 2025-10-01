@@ -140,3 +140,13 @@ a{color:inherit}
 }
 /* Fix mini avatars near form */
 .mini img{background:#122016;border:1px solid #2b5d36}
+
+
+/* === Fix: partner carousel card width on mobile === */
+@media (max-width: 600px){
+  .partners .slide{flex:0 0 78%;}
+  .partners .slide img{height: 220px; object-fit: cover;}
+}
+
+/* Reviews: use house thumbnails (rounded rectangles) */
+.review-row img.avatar{width:84px;height:64px;border-radius:12px;object-fit:cover;border:1px solid #2b5d36;background:#0e1512}
