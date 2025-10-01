@@ -7,31 +7,7 @@
   <meta name="description" content="Каркасные дома под ключ в Нижегородской области. Подберём 3–4 проверенных подрядчика и сопроводим до сдачи.">
   
 
-<style>
-/* ===== Hard override (inline) to ensure GitHub Pages pulls new mobile rules ===== */
-@media (max-width: 700px){
-  /* try a broad set of selectors in case class names differ */
-  section.partners, .partners, [data-partners="true"] { overflow: hidden; }
-  section.partners .track, .partners .track, .partners .slides, .partners ul { 
-    display:flex !important; gap:14px !important; overflow-x:auto !important; 
-    scroll-snap-type:x mandatory !important; padding:6px 6px 14px !important;
-  }
-  section.partners .slide, .partners .slide, .partners li, .partners .item {
-    flex:0 0 92% !important; min-width:92% !important; scroll-snap-align:center !important;
-  }
-  section.partners .slide img, .partners .slide img, .partners img.card {
-    width:100% !important; height:260px !important; object-fit:cover !important; border-radius:18px !important;
-  }
-  .partners .arrow, .partners .nav { display:none !important; }
-  /* Compact top header */
-  .header, .topbar { padding:8px 10px !important; }
-  .header-inner, .topbar-inner { display:grid !important; grid-template-columns:1fr auto !important; gap:6px !important; align-items:center !important; }
-  .tel { font-size:14px !important; margin:0 !important; }
-  .contacts { display:flex !important; align-items:center !important; gap:10px !important; }
-  .contacts .btn-primary, .btn-cta { padding:8px 10px !important; border-radius:10px !important; font-size:14px !important; }
-  .contacts .icon, .icon { width:22px !important; height:22px !important; }
-}
-</style>
+<style>/* will inject after */</style>
 
 
 <style>
@@ -293,10 +269,42 @@ a{color:inherit}
 })();
 </script>
 
+<style>
+/* === v24 explicit carousel and compact header === */
+#partners{position:relative;border:1px solid #1b222b;border-radius:16px;padding:10px;margin:10px 0 0 0;background:#0d1115}
+#partners-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory}
+#partners .slide{flex:0 0 320px;scroll-snap-align:center}
+#partners .slide img{display:block;width:100%;height:200px;object-fit:cover;border-radius:14px;border:1px solid #1b222b}
+@media (max-width:740px){
+  #partners .slide{flex:0 0 92vw}
+  #partners .slide img{height:260px}
+  #partners .arrow{display:none}
+}
+/* Tight topbar on mobile */
+@media (max-width:740px){
+  .topbar .header-inner{display:grid;grid-template-columns:1fr auto;gap:6px;align-items:center}
+  .topbar .tel{font-size:14px;margin:0}
+  .topbar .contacts .btn{padding:8px 10px;border-radius:10px;font-size:14px}
+  .topbar .icon .vk-badge{width:26px;height:26px}
+  .topbar .tg .tg-svg{width:22px;height:22px}
+}
+</style>
+<script>
+// v24: explicit partners controls
+(function(){
+  const track = document.getElementById('partners-track');
+  const prev = document.querySelector('#partners .prev');
+  const next = document.querySelector('#partners .next');
+  if(track && prev && next){
+    prev.onclick=()=>track.scrollBy({left:-320,behavior:'smooth'});
+    next.onclick=()=>track.scrollBy({left:320,behavior:'smooth'});
+  }
+})();
+</script>
 </head>
 <body>
   <!-- Header -->
-  <header class="site-header">
+  <header class="site-header topbar">
     <div class="container header-inner">
       <div class="brand">
         <img src="assets/logo.png" alt="БригАдрес" class="logo"/>
@@ -388,28 +396,20 @@ a{color:inherit}
       </div>
 
       <h3 class="partners-title">Также от наших подрядчиков</h3>
-      <div class="carousel">
-        <button class="car-btn prev" aria-label="Назад">‹</button>
-        <div class="car-track">
-          <img src="assets/partners/1.jpg" alt="Партнёр 1">
-          <img src="assets/partners/2.jpg" alt="Партнёр 2">
-          <img src="assets/partners/3.jpg" alt="Партнёр 3">
-          <img src="assets/partners/4.jpg" alt="Партнёр 4">
-          <img src="assets/partners/5.jpg" alt="Партнёр 5">
-          <img src="assets/partners/6.jpg" alt="Партнёр 6">
+      <section id="partners" class="partners" data-partners="true">
+        <button class="car-btn prev arrow" aria-label="Назад">‹</button>
+        <div class="track" id="partners-track">
+          <div class="slide"><img src="assets/partners/1.jpg" alt="Партнёр 1"></div>
+          <div class="slide"><img src="assets/partners/2.jpg" alt="Партнёр 2"></div>
+          <div class="slide"><img src="assets/partners/3.jpg" alt="Партнёр 3"></div>
+          <div class="slide"><img src="assets/partners/4.jpg" alt="Партнёр 4"></div>
+          <div class="slide"><img src="assets/partners/5.jpg" alt="Партнёр 5"></div>
+          <div class="slide"><img src="assets/partners/6.jpg" alt="Партнёр 6"></div>
         </div>
-        <button class="car-btn next" aria-label="Вперёд">›</button>
-      </div>
-
-      <!-- CTA: Own project -->
-      <div class="cta-own">
-        <div>
-          <h3>Не нашли подходящий проект? Утвердите свой</h3>
-          <p>Соберём предложения под ваш эскиз или планировку, поможем сравнить сметы и доведём до согласованного варианта.</p>
-        </div>
-        <a href="#lead-form" class="btn orange">Свой проект</a>
-      </div>
-    </div>
+        <button class="car-btn next arrow" aria-label="Вперёд">›</button>
+      </section>
+    
+</div>
   </section>
 
   <!-- Why (accordion) -->
