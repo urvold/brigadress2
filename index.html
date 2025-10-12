@@ -1,652 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>БригАдрес — Каркасные дома под ключ</title>
-  <meta name="description" content="Каркасные дома под ключ в Нижегородской области. Подберём 3–4 проверенных подрядчика и сопроводим до сдачи.">
-  
-
-<style>/* will inject after */</style>
-
-
-<style>
-
-:root{
-  --bg:#0a0d10;
-  --panel:#0d1115;
-  --panel-2:#0f1317;
-  --text:#e9eef6;
-  --muted:#b8c3d0;
-  --green:#31b14a;
-  --orange:#f0682b;
-  --stroke:#1b222b;
-  --shadow:0 10px 40px rgba(0,0,0,.35);
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;overflow-x:hidden}
-img{max-width:100%;height:auto}
-a{color:inherit}
-.container{width:min(1180px,92%);margin:0 auto}
-/* Header */
-.site-header{position:sticky;top:0;z-index:40;background:rgba(10,13,16,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--stroke)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
-.brand{display:flex;align-items:center;gap:10px}
-.logo{width:42px;height:42px;object-fit:contain}
-.brand-text{font-weight:800}
-.nav a{margin:0 10px;text-decoration:none;opacity:.9}
-.contacts{display:flex;align-items:center;gap:10px}
-.tel{padding:8px 10px;border:1px solid var(--stroke);border-radius:12px;text-decoration:none;white-space:nowrap}
-.icon .vk-badge{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid var(--stroke);border-radius:999px}
-.tg .tg-svg{width:28px;height:28px}
-/* Buttons */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:14px;border:1px solid var(--stroke);text-decoration:none;font-weight:700;color:#fff}
-.btn.primary{background:var(--green);color:#fff;border-color:transparent}
-.btn.ghost{background:#0e1114;color:#fff}
-.btn.orange{background:var(--orange);color:#fff;border-color:transparent}
-/* Hero */
-.hero{position:relative;min-height:66vh;display:grid;place-items:center;border-bottom:1px solid var(--stroke);overflow:hidden}
-.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:none}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,13,16,.6),rgba(10,13,16,.9))}
-.hero-content{position:relative;text-align:center;padding:80px 0 90px}
-.hero h1{font-size:40px;line-height:1.2;margin:0 0 12px}
-.hero .subtitle{opacity:.9;max-width:760px;margin:0 auto 18px}
-/* Projects */
-.projects{padding:42px 0}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.card{background:var(--panel);border:1px solid var(--stroke);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
-.card img{display:block;width:100%;height:180px;object-fit:cover}
-.card-body{padding:12px 14px}
-.card-body h3{margin:0 0 6px}
-.card-body p{margin:0 0 6px;color:var(--muted)}
-.price{display:inline-block;font-weight:800;color:#9bd3a6;margin-bottom:8px;padding:4px 8px;border:1px dashed #274734;border-radius:8px;background:#0b1210}
-.actions{display:flex;gap:10px}
-/* Partners carousel */
-.partners-title{margin:28px 0 10px}
-.carousel{position:relative;border:1px solid var(--stroke);border-radius:16px;padding:10px;overflow:hidden}
-.car-track{display:grid;grid-auto-flow:column;gap:10px;overflow:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
-.car-track img{height:160px;width:auto;border-radius:10px;scroll-snap-align:center;border:1px solid var(--stroke)}
-.car-btn{position:absolute;top:50%;transform:translateY(-50%);border:1px solid var(--stroke);background:#0d1115;border-radius:12px;padding:6px 10px;color:#fff}
-.car-btn.prev{left:10px}.car-btn.next{right:10px}
-/* CTA own project */
-.cta-own{margin:18px 0 0;background:#0e1114;border:1px solid var(--stroke);border-radius:16px;padding:18px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.cta-own h3{margin:0 0 6px}
-.cta-own p{margin:0;color:var(--muted)}
-/* Why accordion */
-.why{padding:42px 0;border-top:1px solid var(--stroke)}
-.why .subtitle{color:var(--muted);margin-top:8px;max-width:960px}
-.accordion{display:flex;flex-direction:column;gap:12px;margin-top:16px}
-.accordion details{background:var(--panel-2);border:1px solid var(--stroke);border-radius:16px;overflow:hidden}
-.accordion summary{list-style:none;cursor:pointer;padding:14px 18px;font-weight:800;display:flex;align-items:center;gap:12px}
-.accordion summary::-webkit-details-marker{display:none}
-.acc-num{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px;border-radius:50%;border:1px solid var(--stroke);font-size:.9rem;opacity:.85;margin-right:6px}
-.acc-title{flex:1;}
-.accordion .acc-body{padding:0 18px 16px;color:var(--text);opacity:.9;line-height:1.6}
-/* Reviews vertical */
-.reviews{padding:42px 0;border-top:1px solid var(--stroke)}
-.reviews-list{display:flex;flex-direction:column;gap:12px}
-.review-row{display:flex;align-items:flex-start;gap:12px;background:var(--panel);border:1px solid var(--stroke);border-radius:16px;padding:12px}
-.review-row img.avatar{width:72px;height:54px;object-fit:cover;border-radius:10px;flex:0 0 auto}
-.review-row .text{flex:1;line-height:1.5}
-/* How steps */
-.how{padding:42px 0;border-top:1px solid var(--stroke)}
-.how-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.step{background:var(--panel);border:1px solid var(--stroke);border-radius:16px;padding:14px}
-.pill{display:inline-block;border:1px solid var(--green);color:var(--green);border-radius:999px;padding:4px 8px;font-size:.85rem;opacity:.95;margin-bottom:6px}
-/* Lead form */
-.lead{padding:42px 0;border-top:1px solid var(--stroke)}
-.lead-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
-.badges{display:flex;gap:8px;list-style:none;padding:0;margin:10px 0 12px 0}
-.badge{border:1px solid var(--green);color:var(--green);border-radius:999px;padding:6px 12px;font-weight:700}
-.mini{display:flex;align-items:center;gap:8px;color:var(--muted)}
-.mini img{width:28px;height:28px;border-radius:6px}
-.form{background:var(--panel);border:1px solid var(--stroke);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px}
-.form label{display:flex;flex-direction:column;gap:6px}
-.form input,.form select{width:100%;padding:12px;border-radius:12px;border:1px solid var(--stroke);background:#0b0f13;color:#fff}
-/* FAQ + Footer */
-.faq{padding:42px 0;border-top:1px solid var(--stroke)}
-.faq details{background:var(--panel);border:1px solid var(--stroke);border-radius:14px;padding:10px;margin:8px 0}
-.footer{border-top:1px solid var(--stroke);background:#0b0f13;padding:24px 0;margin-top:20px}
-.footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:16px}
-.footer a{color:#9bd3a6;text-decoration:none}
-.footer small{color:var(--muted)}
-/* Fixed CTA */
-.cta-fixed{position:fixed;right:calc(18px + env(safe-area-inset-right));bottom:calc(18px + env(safe-area-inset-bottom));background:var(--orange);color:#fff;border-radius:999px;padding:14px 18px;text-decoration:none;font-weight:800;box-shadow:var(--shadow);z-index:60}
-/* Modal via :target */
-.modal{position:fixed;inset:0;display:none;z-index:70}
-.modal:target{display:block}
-.modal-dim{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(2px)}
-.modal-card{position:relative;max-width:920px;max-height:92vh;margin:8vh auto;background:var(--panel);border:1px solid var(--stroke);border-radius:16px;box-shadow:var(--shadow);padding:16px 18px;overflow:auto}
-.modal-card h3{position:sticky;top:0;background:var(--panel);margin:-8px -8px 12px -8px;padding:12px 14px;border-bottom:1px solid var(--stroke);z-index:3}
-.modal-media{display:block;width:100%;height:auto;max-height:45vh;object-fit:cover;border-radius:14px;margin:6px 0 14px 0}
-.modal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:4px 0 16px 0}
-.modal-kv{background:#111519;border:1px solid var(--stroke);border-radius:14px;padding:14px 14px}
-.modal-kv b{display:block;font-size:.86rem;color:#7ddc88;margin-bottom:6px}
-.modal-kv span{font-size:1.02rem}
-.modal-desc{margin:8px 2px 14px 2px;line-height:1.65;font-size:1.02rem}
-.modal-close{position:sticky;top:8px;right:8px;float:right;z-index:10;font-size:20px;line-height:1;padding:.35rem .6rem;border-radius:10px;background:#0e1114;border:1px solid var(--stroke);text-decoration:none;color:#fff}
-/* Responsive */
-@media (max-width:1024px){
-  .grid{grid-template-columns:repeat(2,1fr)}
-  .how-grid{grid-template-columns:repeat(2,1fr)}
-  .lead-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr}
-  .hero h1{font-size:32px}
-}
-@media (max-width:560px){
-  .nav{display:none}
-  .contacts{gap:6px}
-  .tel{border:none;padding:0;font-weight:700}
-  .icon .vk-badge{width:28px;height:28px}
-  .tg .tg-svg{width:24px;height:24px}
-  .grid{grid-template-columns:1fr}
-  .hero-content{padding:60px 0 70px}
-}
-
-/* Extra mobile header fixes */
-@media (max-width:560px){
-  .header-inner{display:grid;grid-template-columns:1fr auto;row-gap:8px;align-items:center}
-  .brand{grid-column:1/2}
-  .contacts{grid-column:1/3;justify-content:space-between;width:100%}
-  .contacts .btn{padding:8px 10px;border-radius:10px}
-  .tel{font-size:14px}
-}
-/* Fix mini avatars near form */
-.mini img{background:#122016;border:1px solid #2b5d36}
-
-
-/* === Fix: partner carousel card width on mobile === */
-@media (max-width: 600px){
-  .partners .slide{flex:0 0 78%;}
-  .partners .slide img{height: 220px; object-fit: cover;}
-}
-
-/* Reviews: use house thumbnails (rounded rectangles) */
-.review-row img.avatar{width:84px;height:64px;border-radius:12px;object-fit:cover;border:1px solid #2b5d36;background:#0e1512}
-
-
-/* === Fix 2: make partner slides wider on phones === */
-@media (max-width: 640px){
-  .partners .slide{flex:0 0 88% !important; min-width:88% !important;}
-  .partners .slide img{width:100%; height:240px !important; object-fit:cover; border-radius:16px;}
-  .partners .track{gap:12px;}
-}
-
-
-/* === v21: ultra-strong mobile carousel fix === */
-@media (max-width: 680px){
-  body .partners{overflow:hidden;padding:12px 0;}
-  body .partners .track{display:flex;gap:14px;scroll-snap-type:x mandatory;overflow-x:auto;padding:4px 4px 12px;}
-  body .partners .slide{flex:0 0 92% !important;min-width:92% !important;scroll-snap-align:center;}
-  body .partners .slide img{width:100% !important;height:260px !important;object-fit:cover !important;border-radius:18px;}
-  body .partners .nav, body .partners .arrow{display:none !important;}
-}
-
-/* === v21: compact mobile header === */
-@media (max-width: 680px){
-  .header{padding:8px 10px !important;}
-  .header-inner{display:grid;grid-template-columns:1fr auto;align-items:center;gap:6px;}
-  .brand{font-size:18px;line-height:1}
-  .tel{font-size:14px;margin:0}
-  .contacts{display:flex;gap:10px;align-items:center}
-  .contacts .btn-primary{padding:8px 10px;border-radius:10px;font-size:14px}
-  .contacts .icon{width:22px;height:22px}
-}
-
-
-/* v23 hard overrides */
-@media (max-width: 720px){
-  /* Compact header */
-  .header, .topbar { padding:8px 10px !important; }
-  .header-inner, .topbar-inner { display:grid !important; grid-template-columns:1fr auto !important; gap:6px !important; align-items:center !important; }
-  .tel { font-size:14px !important; margin:0 !important; }
-  .contacts { display:flex !important; gap:10px !important; align-items:center !important; }
-  .contacts .btn-primary { padding:8px 10px !important; border-radius:10px !important; font-size:14px !important; }
-  .contacts .icon { width:22px !important; height:22px !important; }
-}
-/* Carousel defaults */
-.partners .track { display:flex; gap:18px; }
-.partners .slide img { display:block; width:100%; border-radius:18px; }
-</style>
-<script>
-(function(){ 
-  function widenCarousel(){
-    if (window.innerWidth > 760) return;
-    // Try several locator strategies
-    var section = document.querySelector('.partners') 
-      || document.querySelector('section.partners')
-      || document.querySelector('[data-partners="true"]');
-    if (!section){
-      // fallback: heading text search
-      var hs = Array.from(document.querySelectorAll('h2,h3'));
-      var h = hs.find(x => /Также от наших подрядчик/.test((x.textContent||'').trim()));
-      if (h) section = h.parentElement.querySelector('*:not(h2):not(h3)');
-    }
-    if (!section) return;
-    // candidates for slides
-    var slides = section.querySelectorAll('.slide, .card, .item, li, .swiper-slide, .glide__slide, .splide__slide');
-    if (!slides.length){
-      // maybe images directly
-      slides = section.querySelectorAll('img');
-    }
-    slides.forEach(function(el){
-      el.style.minWidth = '92vw';
-      el.style.flex = '0 0 92vw';
-      el.style.scrollSnapAlign = 'center';
-      // ensure image sizing
-      var img = el.tagName.toLowerCase()==='img' ? el : el.querySelector('img');
-      if (img){
-        img.style.width = '100%';
-        img.style.height = '260px';
-        img.style.objectFit = 'cover';
-        img.style.borderRadius = '18px';
-      }
-    });
-    // ensure overflow horizontal
-    var track = section.querySelector('.track, .slides, ul, .swiper-wrapper, .glide__track, .splide__list') || section;
-    track.style.display = 'flex';
-    track.style.gap = '14px';
-    track.style.overflowX = 'auto';
-    track.style.scrollSnapType = 'x mandatory';
-    // hide arrows on mobile if present
-    Array.from(section.querySelectorAll('.arrow, .nav')).forEach(n=>n.style.display='none');
-  }
-  function compactHeader(){
-    if (window.innerWidth <= 760){
-      document.body.classList.add('top-compact');
-    } else {
-      document.body.classList.remove('top-compact');
-    }
-  }
-  window.addEventListener('DOMContentLoaded', function(){
-    widenCarousel(); compactHeader();
-    // run again after a tick for lazy DOM
-    setTimeout(widenCarousel, 300);
-  });
-  window.addEventListener('resize', function(){
-    widenCarousel(); compactHeader();
-  });
-})();
-</script>
-
-<style>
-/* === v24 explicit carousel and compact header === */
-#partners{position:relative;border:1px solid #1b222b;border-radius:16px;padding:10px;margin:10px 0 0 0;background:#0d1115}
-#partners-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory}
-#partners .slide{flex:0 0 320px;scroll-snap-align:center}
-#partners .slide img{display:block;width:100%;height:200px;object-fit:cover;border-radius:14px;border:1px solid #1b222b}
-@media (max-width:740px){
-  #partners .slide{flex:0 0 92vw}
-  #partners .slide img{height:260px}
-  #partners .arrow{display:none}
-}
-/* Tight topbar on mobile */
-@media (max-width:740px){
-  .topbar .header-inner{display:grid;grid-template-columns:1fr auto;gap:6px;align-items:center}
-  .topbar .tel{font-size:14px;margin:0}
-  .topbar .contacts .btn{padding:8px 10px;border-radius:10px;font-size:14px}
-  .topbar .icon .vk-badge{width:26px;height:26px}
-  .topbar .tg .tg-svg{width:22px;height:22px}
-}
-</style>
-<script>
-// v24: explicit partners controls
-(function(){
-  const track = document.getElementById('partners-track');
-  const prev = document.querySelector('#partners .prev');
-  const next = document.querySelector('#partners .next');
-  if(track && prev && next){
-    prev.onclick=()=>track.scrollBy({left:-320,behavior:'smooth'});
-    next.onclick=()=>track.scrollBy({left:320,behavior:'smooth'});
-  }
-})();
-</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>БригАдрес — каркасные дома под ключ</title>
+<meta name="description" content="Каркасные дома под ключ в Нижегородской области. Подберём 3–4 подрядчика и сопроводим до сдачи.">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="site-header topbar">
-    <div class="container header-inner">
-      <div class="brand">
-        <img src="assets/logo.png" alt="БригАдрес" class="logo"/>
-        <span class="brand-text">БригАдрес</span>
-      </div>
-      <nav class="nav">
-        <a href="#projects">Проекты</a>
-        <a href="#reviews">Отзывы</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <div class="contacts">
-        <a class="tel" href="tel:+79334191597">8 (933) 419-15-97</a>
-        <a class="icon tg" title="Telegram" href="https://t.me/BrigAdres" target="_blank" aria-label="Telegram">
-          <svg class="tg-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.18 15.77l-.37 3.79c.54 0 .77-.23 1.05-.5l2.53-2.28 5.35 3.3c.98.46 1.66.22 1.93-.8l3.5-13.94c.32-1.24-.51-1.73-1.46-1.42L2.04 9.19c-1.41.46-1.39 1.12-.24 1.41l5.3 1.31 12.5-7.09c.59-.32 1.14-.15.69.17L9.18 15.77z" fill="currentColor"/></svg>
-        </a>
-        <a class="icon vk" title="VK" href="https://vk.com/brigadres_club" target="_blank" aria-label="VK"><span class="vk-badge">VK</span></a>
-        <a class="btn primary" href="#lead-form">Отправить заявку</a>
-      </div>
-    </div>
+  <header class="container" style="display:flex;justify-content:space-between;align-items:center;gap:16px">
+    <div style="font-weight:900;font-size:20px">БригАдрес</div>
+    <nav style="display:flex;gap:18px;opacity:.9">
+      <a href="#projects">Проекты</a>
+      <a href="#partners">Построено</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#form">Заявка</a>
+    </nav>
+    <a href="tel:+79334191597" class="btn" style="flex:0 0 auto">8 (933) 419‑15‑97</a>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" id="top">
-    <img src="assets/hero.jpg" alt="Каркасный дом" class="hero-bg" />
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <h1>КАРКАСНЫЕ ДОМА ПОД КЛЮЧ<br/>в Нижегородской области</h1>
-      <p class="subtitle">Подберём 3–4 проверенных подрядчика и сопроводим до сдачи. Бесплатно для вас. Договор и контроль качества.</p>
-      <a class="btn primary" href="#lead-form">Связаться</a>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section class="projects" id="projects">
-    <div class="container">
-      <h2>Готовые проекты</h2>
-      <div class="grid">
-        <article class="card">
-          <img src="assets/projects/barn123.jpg" alt="Барн 123">
-          <div class="card-body">
-            <h3>Барн 123</h3>
-            <p>123 м² • 3 спальни • 2 санузла</p>
-            <div class="price">от 4 670 000 ₽</div>
-            <div class="actions">
-              <a href="#lead-form" class="btn ghost">Получить сметы</a>
-              <a href="#m-barn123" class="btn ghost">Подробнее</a>
-            </div>
+  <main class="container">
+    <h2 id="projects" class="section-title">Проект дома вашей мечты</h2>
+    <div class="grid projects">
+      <article class="card">
+        <img src="assets/img/projects/barn123.jpg" alt="Барн 123">
+        <div class="p">
+          <h3>Барн 123</h3>
+          <div class="meta">123 м² • 3 спальни • 2 санузла</div>
+          <div class="price">от 4 670 000 ₽</div>
+          <div class="btns">
+            <a class="btn btn--primary" href="#form">Получить сметы</a>
+            <button class="btn" onclick="openDetails('barn123')">Подробнее</button>
           </div>
-        </article>
-
-        <article class="card">
-          <img src="assets/projects/loft61.jpg" alt="Лофт 61">
-          <div class="card-body">
-            <h3>Лофт 61</h3>
-            <p>61 м² • 2 спальни • 1 санузел</p>
-            <div class="price">от 3 430 000 ₽</div>
-            <div class="actions">
-              <a href="#lead-form" class="btn ghost">Получить сметы</a>
-              <a href="#m-loft61" class="btn ghost">Подробнее</a>
-            </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="assets/img/projects/loft61.jpg" alt="Лофт 61">
+        <div class="p">
+          <h3>Лофт 61</h3>
+          <div class="meta">61 м² • 2 спальни • 1 санузел</div>
+          <div class="price">от 3 430 000 ₽</div>
+          <div class="btns">
+            <a class="btn btn--primary" href="#form">Получить сметы</a>
+            <button class="btn" onclick="openDetails('loft61')">Подробнее</button>
           </div>
-        </article>
-
-        <article class="card">
-          <img src="assets/projects/barn145.jpg" alt="Барн 145">
-          <div class="card-body">
-            <h3>Барн 145</h3>
-            <p>145 м² • 4 спальни • 2 санузла</p>
-            <div class="price">от 6 060 000 ₽</div>
-            <div class="actions">
-              <a href="#lead-form" class="btn ghost">Получить сметы</a>
-              <a href="#m-barn145" class="btn ghost">Подробнее</a>
-            </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="assets/img/projects/barn145.jpg" alt="Барн 145">
+        <div class="p">
+          <h3>Барн 145</h3>
+          <div class="meta">145 м² • 4 спальни • 2 санузла</div>
+          <div class="price">от 6 060 000 ₽</div>
+          <div class="btns">
+            <a class="btn btn--primary" href="#form">Получить сметы</a>
+            <button class="btn" onclick="openDetails('barn145')">Подробнее</button>
           </div>
-        </article>
-
-        <article class="card">
-          <img src="assets/projects/right103.jpg" alt="Райт 103">
-          <div class="card-body">
-            <h3>Райт 103</h3>
-            <p>103 м² • 3 спальни • 2 санузла</p>
-            <div class="price">от 4 740 000 ₽</div>
-            <div class="actions">
-              <a href="#lead-form" class="btn ghost">Получить сметы</a>
-              <a href="#m-right103" class="btn ghost">Подробнее</a>
-            </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="assets/img/projects/right103.jpg" alt="Райт 103">
+        <div class="p">
+          <h3>Райт 103</h3>
+          <div class="meta">103 м² • 3 спальни • 2 санузла</div>
+          <div class="price">от 4 740 000 ₽</div>
+          <div class="btns">
+            <a class="btn btn--primary" href="#form">Получить сметы</a>
+            <button class="btn" onclick="openDetails('right103')">Подробнее</button>
           </div>
-        </article>
-      </div>
-
-      <h3 class="partners-title">Также от наших подрядчиков</h3>
-      <section id="partners" class="partners" data-partners="true">
-        <button class="car-btn prev arrow" aria-label="Назад">‹</button>
-        <div class="track" id="partners-track">
-          <div class="slide"><img src="assets/partners/1.jpg" alt="Партнёр 1"></div>
-          <div class="slide"><img src="assets/partners/2.jpg" alt="Партнёр 2"></div>
-          <div class="slide"><img src="assets/partners/3.jpg" alt="Партнёр 3"></div>
-          <div class="slide"><img src="assets/partners/4.jpg" alt="Партнёр 4"></div>
-          <div class="slide"><img src="assets/partners/5.jpg" alt="Партнёр 5"></div>
-          <div class="slide"><img src="assets/partners/6.jpg" alt="Партнёр 6"></div>
         </div>
-        <button class="car-btn next arrow" aria-label="Вперёд">›</button>
-      
-      <!-- CTA: Own project (restored) -->
-      <div class="cta-own">
-        <div>
-          <h3>Не нашли подходящий проект? Утвердите свой</h3>
-          <p>Соберём предложения под ваш эскиз или планировку, поможем сравнить сметы и доведём до согласованного варианта.</p>
-        </div>
-        <a href="#lead-form" class="btn orange">Свой проект</a>
-      </div>
-</section>
-    
-</div>
-  </section>
-
-  <!-- Why (accordion) -->
-  <section class="why" id="why">
-    <div class="container">
-      <h2>Подберём проверенного подрядчика на каркасный дом и сопроводим стройку</h2>
-      <p class="subtitle">БригАдрес — сервис подбора и сопровождения. Мы собираем предложения от разных подрядчиков, помогаем выбрать оптимальное и контролируем качество на этапах.</p>
-
-      <div class="accordion">
-        <details>
-          <summary><span class="acc-num">1</span><span class="acc-title">Быстрый старт и понятные этапы</span></summary>
-          <div class="acc-body">Собираем несколько актуальных предложений под ваш бюджет и участок, вы сразу видите сроки по этапам — от подготовки основания до отделки. Мы следим, чтобы график не «провисал».</div>
-        </details>
-        <details>
-          <summary><span class="acc-num">2</span><span class="acc-title">Тёплый, энергоэффективный контур</span></summary>
-          <div class="acc-body">Рекомендуем проверенные решения по утеплению, паро- и ветрозащите, узлам и окнам. Контролируем, чтобы подрядчик применял заявленные материалы и толщины.</div>
-        </details>
-        <details>
-          <summary><span class="acc-num">3</span><span class="acc-title">Прозрачные сметы без сюрпризов</span></summary>
-          <div class="acc-body">Сравнение смет «по строкам»: видно, за что платите — фундамент, каркас, кровля, фасад, инженерка. Помогаем убрать лишнее и усилить важное.</div>
-        </details>
-        <details>
-          <summary><span class="acc-num">4</span><span class="acc-title">Материалы и сборка по стандартам</span></summary>
-          <div class="acc-body">Сверяем спецификацию с поставками, требуем фото/видео-отчёты. Проверяем геометрию, крепёж, узлы примыканий, чтобы дом был прочным и сухим.</div>
-        </details>
-        <details>
-          <summary><span class="acc-num">5</span><span class="acc-title">Индивидуальные планировки и комплектация</span></summary>
-          <div class="acc-body">Под подрядчика подбираем нужные изменения: кухня-гостиная, второй свет, терраса, гардеробные, варианты фасада и кровли — без потери качества.</div>
-        </details>
-        <details>
-          <summary><span class="acc-num">6</span><span class="acc-title">Проверенные подрядчики с портфолио</span></summary>
-          <div class="acc-body">В базе — команды с реальными объектами и отзывами. Мы оцениваем загруженность бригад и организацию на площадке.</div>
-        </details>
-        <details>
-          <summary><span class="acc-num">7</span><span class="acc-title">Порядок на участке и уважение к соседям</span></summary>
-          <div class="acc-body">Фиксируем правила хранения материалов, ежедневный вывоз мусора, безопасное ограждение зоны работ. Следим за соблюдением.</div>
-        </details>
-        <details>
-          <summary><span class="acc-num">8</span><span class="acc-title">Поддержка после сдачи</span></summary>
-          <div class="acc-body">Не пропадаем после ключей: подскажем по эксплуатации, поможем с мелкими доработками и координацией подрядчика.</div>
-        </details>
-      </div>
+      </article>
     </div>
-  </section>
 
-  <!-- Reviews -->
-  <section class="reviews" id="reviews">
-    <div class="container">
-      <h2>Отзывы</h2>
-      <div class="reviews-list">
-        <div class="review-row">
-          <img class="avatar" src="assets/reviews/1.jpg" alt="">
-          <div class="text">«Выбирали между несколькими подрядчиками — команда БригАдрес быстро предоставила 3 предложения, помогла сравнить сметы и объяснила отличия. Дом сдали вовремя, без доплат.» — <b>Алексей, Бор</b></div>
-        </div>
-        <div class="review-row">
-          <img class="avatar" src="assets/reviews/2.jpg" alt="">
-          <div class="text">«Фиксированная цена в договоре, фотоотчёты. Теплоизоляция реально топ — зимой экономим на отоплении.» — <b>Марина, Нижний Новгород</b></div>
-        </div>
-        <div class="review-row">
-          <img class="avatar" src="assets/reviews/3.jpg" alt="">
-          <div class="text">«Подобрали подрядчика под наш участок. Проект доработали, сделали удобные решения.» — <b>Игорь, Павлово</b></div>
-        </div>
-        <div class="review-row">
-          <img class="avatar" src="assets/reviews/4.jpg" alt="">
-          <div class="text">«От заявки до заселения прошло меньше трёх месяцев. Контроль качества на каждом этапе.» — <b>Анна, Дзержинск</b></div>
-        </div>
-      </div>
+    <h2 id="partners" class="section-title">Построено нашими партнёрами</h2>
+    <div class="carousel">
+      <div class="slide"><img src="assets/img/partners_thumbs/1.jpg" loading="lazy" alt="Пример"></div><div class="slide"><img src="assets/img/partners_thumbs/2.jpg" loading="lazy" alt="Пример"></div><div class="slide"><img src="assets/img/partners_thumbs/3.jpg" loading="lazy" alt="Пример"></div><div class="slide"><img src="assets/img/partners_thumbs/4.jpg" loading="lazy" alt="Пример"></div><div class="slide"><img src="assets/img/partners_thumbs/5.jpg" loading="lazy" alt="Пример"></div><div class="slide"><img src="assets/img/partners_thumbs/6.jpg" loading="lazy" alt="Пример"></div>
     </div>
-  </section>
 
-  <!-- How it works -->
-  <section class="how">
-    <div class="container">
-      <h2>Как это работает</h2>
-      <div class="how-grid">
-        <article class="step"><span class="pill">1 день</span><h3>Заявка</h3><p>Заполняете форму — мы связываемся и назначаем время.</p><a href="#lead-form" class="btn ghost">Оставить заявку</a></article>
-        <article class="step"><span class="pill">10–15 минут</span><h3>Созвон</h3><p>Уточняем задачи, сроки, комплектацию.</p></article>
-        <article class="step"><span class="pill">48 часов</span><h3>Сметы</h3><p>3 сопоставимых варианта (цена/срок/материалы).</p><a href="#lead-form" class="btn ghost">Получить сметы</a></article>
-        <article class="step"><span class="pill">1 выезд</span><h3>Выезд и договор</h3><p>Осмотр участка, финализация сметы, фиксируем сроки.</p></article>
-        <article class="step"><span class="pill">до сдачи</span><h3>Стройка и контроль</h3><p>Фотоотчёты, акт сдачи, гарантия 5 лет.</p></article>
-      </div>
+    <h2 id="reviews" class="section-title">Заказчики о нашем сервисе</h2>
+    <div>
+      <div class="review"><img src="assets/img/reviews_thumbs/1.jpg" alt="Дом"><p>«Отличная работа и прозрачные сметы. Контроль качества на каждом этапе.» — <b>Клиент</b></p></div><div class="review"><img src="assets/img/reviews_thumbs/2.jpg" alt="Дом"><p>«Отличная работа и прозрачные сметы. Контроль качества на каждом этапе.» — <b>Клиент</b></p></div><div class="review"><img src="assets/img/reviews_thumbs/3.jpg" alt="Дом"><p>«Отличная работа и прозрачные сметы. Контроль качества на каждом этапе.» — <b>Клиент</b></p></div><div class="review"><img src="assets/img/reviews_thumbs/4.jpg" alt="Дом"><p>«Отличная работа и прозрачные сметы. Контроль качества на каждом этапе.» — <b>Клиент</b></p></div>
     </div>
-  </section>
 
-  <!-- Lead form -->
-  <section class="lead" id="lead-form">
-    <div class="container lead-grid">
-      <div>
-        <h2>Оставьте заявку, чтобы подобрать проект под себя</h2>
-        <div class="badges">
-          <span class="badge">Документы проверены</span>
-          <span class="badge">Сопровождаем до сдачи</span>
-        </div>
-        <div class="mini"><img src="assets/icons/avatar.svg" alt="">«Ответили в тот же день!» — Ольга</div>
-        <div class="mini"><img src="assets/icons/avatar.svg" alt="">«Помогли сравнить сметы» — Роман</div>
-      </div>
-      <form class="form" method="POST" action="https://formsubmit.co/brigadres@mail.ru" novalidate>
-        <label>Имя
-          <input type="text" name="name" placeholder="Ваше имя" required>
-        </label>
-        <label>Телефон для связи
-          <input type="text" inputmode="tel" name="phone" placeholder="+7 ___ ___-__-__">
-        </label>
-        <label>Я хочу получить
-          <select name="request">
-            <option>Расчет проекта</option>
-            <option>Консультацию</option>
-            <option>Другое</option>
-          </select>
-        </label>
-        <input type="hidden" name="_subject" value="Новая заявка с сайта БригАдрес">
-        <input type="hidden" name="_captcha" value="false">
-        <button type="submit" class="btn primary">Отправить</button>
-      </form>
+    <h2 id="form" class="section-title">Оставьте заявку — подберём подрядчика и сопроводим</h2>
+    <div class="note-pills">
+      <span class="note-pill">Документы проверены</span>
+      <span class="note-pill">Сопровождаем до сдачи</span>
     </div>
-  </section>
+    <form class="form" onsubmit="event.preventDefault(); document.getElementById('contact_link').click();">
+      <input name="name" placeholder="Ваше имя">
+      <input name="phone" placeholder="+7 ___ ___‑__‑__">
+      <select name="topic">
+        <option>Расчёт проекта</option>
+        <option>Сравнить сметы</option>
+        <option>Подбор подрядчика</option>
+      </select>
+      <select id="contact_way" onchange="handleContactChange()">
+        <option value="">Как связаться</option>
+        <option value="call">Позвонить</option>
+        <option value="tg">Написать в Telegram</option>
+        <option value="wa">Написать в WhatsApp</option>
+      </select>
+      <a id="contact_link" class="btn btn--primary" style="display:none;align-items:center;justify-content:center;gap:8px">Связаться</a>
+      <button class="submit">Отправить</button>
+    </form>
+  </main>
 
-  <!-- Footer + FAQ -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <h3>Контакты</h3>
-        <p><a href="tel:+79334191597">8 (933) 419-15-97</a> • <a href="mailto:brigadres@mail.ru">brigadres@mail.ru</a></p>
-        <p><a href="https://t.me/BrigAdres" target="_blank">Telegram</a> • <a href="https://vk.com/brigadres_club" target="_blank">ВКонтакте</a></p>
+  <div class="modal-backdrop" onclick="if(event.target===this) closeModal()">
+    <div class="modal">
+      <header>
+        <h3>Детали проекта</h3>
+        <button class="close" onclick="closeModal()">×</button>
+      </header>
+      <div class="content">
+        <img class="hero" src="" alt="Проект">
+        <div class="body"></div>
       </div>
-      <div>
-        <h3>Документы</h3>
-        <p><a href="https://disk.yandex.ru/d/QJ3SUIqIjdtrEg" target="_blank">Политика конфиденциальности</a></p>
-        <p><a href="https://disk.yandex.ru/d/ttlyl_xgB4KdQw" target="_blank">Публичная оферта</a></p>
-      </div>
-      <div>
-        <h3>Реквизиты</h3>
-        <p>ИНН 470206635264<br/>ОГРН 325470400100411</p>
-        <small>© БригАдрес</small>
-      </div>
-    </div>
-  </footer>
-
-  <section class="faq" id="faq">
-    <div class="container">
-      <h2>FAQ</h2>
-      <details><summary>Как вы проверяете подрядчиков?</summary><p>Многоэтапная проверка: документы, отзывы, судебная история, тестовые заказы или отчёты.</p></details>
-      <details><summary>Что если не понравятся варианты?</summary><p>Бесплатно подготовим новую подборку из 3 подрядчиков по вашим критериям.</p></details>
-      <details><summary>Как происходит оплата?</summary><p>Оплата напрямую подрядчику по его договору. Мы не принимаем платежи.</p></details>
-      <details><summary>Поможете с договором?</summary><p>Да, дадим типовой договор и консультацию юриста по ключевым пунктам.</p></details>
-    </div>
-  </section>
-
-  <!-- Modals (details for projects) -->
-  <div class="modal" id="m-barn123">
-    <a class="modal-dim" href="#projects" aria-label="Закрыть"></a>
-    <div class="modal-card" role="dialog" aria-modal="true">
-      <a class="modal-close" href="#projects" aria-label="Закрыть">×</a>
-      <h3>Барн 123 — детали проекта</h3>
-      <img class="modal-media" src="assets/projects/barn123.jpg" alt="Барн 123">
-      <div class="modal-grid">
-        <div class="modal-kv"><b>Стоимость</b><span>от 4 670 000 ₽</span></div>
-        <div class="modal-kv"><b>Площадь</b><span>123 м²</span></div>
-        <div class="modal-kv"><b>Планировка</b><span>3 спальни, 2 санузла</span></div>
-        <div class="modal-kv"><b>Срок</b><span>Средний срок сдачи 3 месяца</span></div>
-      </div>
-      <p class="modal-desc">Дом в стиле Барнхаус — тренд каркасного строительства. Этот проект сочетает в себе стиль, красоту и удобство. Планировка включает 3 спальни и 2 санузла; из кухни-гостиной есть выход на террасу.</p>
-      <a href="#lead-form" class="btn primary">Получить сметы</a>
     </div>
   </div>
 
-  <div class="modal" id="m-loft61">
-    <a class="modal-dim" href="#projects" aria-label="Закрыть"></a>
-    <div class="modal-card" role="dialog" aria-modal="true">
-      <a class="modal-close" href="#projects" aria-label="Закрыть">×</a>
-      <h3>Лофт 61 — детали проекта</h3>
-      <img class="modal-media" src="assets/projects/loft61.jpg" alt="Лофт 61">
-      <div class="modal-grid">
-        <div class="modal-kv"><b>Стоимость</b><span>от 3 430 000 ₽</span></div>
-        <div class="modal-kv"><b>Площадь</b><span>61 м²</span></div>
-        <div class="modal-kv"><b>Планировка</b><span>2 спальни, 1 санузел</span></div>
-        <div class="modal-kv"><b>Срок</b><span>Средний срок сдачи 3 месяца</span></div>
-      </div>
-      <p class="modal-desc">Дом 61 м² — стильный и компактный. Две спальни и кухня-гостиная — отличное решение для семьи и загородной жизни.</p>
-      <a href="#lead-form" class="btn primary">Получить сметы</a>
-    </div>
-  </div>
-
-  <div class="modal" id="m-barn145">
-    <a class="modal-dim" href="#projects" aria-label="Закрыть"></a>
-    <div class="modal-card" role="dialog" aria-modal="true">
-      <a class="modal-close" href="#projects" aria-label="Закрыть">×</a>
-      <h3>Барн 145 — детали проекта</h3>
-      <img class="modal-media" src="assets/projects/barn145.jpg" alt="Барн 145">
-      <div class="modal-grid">
-        <div class="modal-kv"><b>Стоимость</b><span>от 6 060 000 ₽</span></div>
-        <div class="modal-kv"><b>Площадь</b><span>145 м²</span></div>
-        <div class="modal-kv"><b>Планировка</b><span>4 спальни, 2 санузла</span></div>
-        <div class="modal-kv"><b>Срок</b><span>Средний срок сдачи 3 месяца</span></div>
-      </div>
-      <p class="modal-desc">Планировка предусматривает два санузла, удобную входную группу (котельная/гардероб), кухню-гостиную ~31 м² и террасу ~27 м².</p>
-      <a href="#lead-form" class="btn primary">Получить сметы</a>
-    </div>
-  </div>
-
-  <div class="modal" id="m-right103">
-    <a class="modal-dim" href="#projects" aria-label="Закрыть"></a>
-    <div class="modal-card" role="dialog" aria-modal="true">
-      <a class="modal-close" href="#projects" aria-label="Закрыть">×</a>
-      <h3>Райт 103 — детали проекта</h3>
-      <img class="modal-media" src="assets/projects/right103.jpg" alt="Райт 103">
-      <div class="modal-grid">
-        <div class="modal-kv"><b>Стоимость</b><span>от 4 740 000 ₽</span></div>
-        <div class="modal-kv"><b>Площадь</b><span>103 м²</span></div>
-        <div class="modal-kv"><b>Планировка</b><span>3 спальни, 2 санузла</span></div>
-        <div class="modal-kv"><b>Срок</b><span>Средний срок сдачи 3 месяца</span></div>
-      </div>
-      <p class="modal-desc">Рациональная планировка с тремя спальнями, двумя санузлами и котельной. Кухня-гостиная ~25 м² — комфортно без потери площади.</p>
-      <a href="#lead-form" class="btn primary">Получить сметы</a>
-    </div>
-  </div>
-
-  <a href="#lead-form" class="cta-fixed">Получить 3–4 предложения</a>
-
-  <script>
-    // Carousel
-    const track=document.querySelector('.car-track');
-    document.querySelector('.car-btn.prev').onclick=()=>track.scrollBy({left:-300,behavior:'smooth'});
-    document.querySelector('.car-btn.next').onclick=()=>track.scrollBy({left:300,behavior:'smooth'});
-    // ESC closes modal
-    document.addEventListener('keydown',function(e){
-      if(e.key==='Escape' && location.hash && location.hash.startsWith('#m-')){ location.hash='#projects'; }
-    });
-  </script>
+<script src="script.js"></script>
 </body>
 </html>

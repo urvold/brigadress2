@@ -1,48 +1,37 @@
 
-document.addEventListener('DOMContentLoaded', ()=>{
-  // burger
-  const burger=document.querySelector('.burger'); const nav=document.querySelector('.nav');
-  if(burger&&nav){ burger.addEventListener('click',()=>{ nav.style.display=(nav.style.display==='flex'?'none':'flex'); if(nav.style.display==='flex'){nav.style.flexDirection='column'} }); }
+const DATA_URL = 'assets/projects.json';
+let DATA = {};
+fetch(DATA_URL).then(r=>r.json()).then(j=>DATA=j);
 
-  // accordion
-  document.querySelectorAll('.feature').forEach(f=>{
-    const h=f.querySelector('.feature-head');
-    h.addEventListener('click',()=> f.classList.toggle('open'));
-  });
+function openDetails(key){
+  const p = DATA[key]; if(!p) return;
+  const bg = document.querySelector('.modal-backdrop'); 
+  const m = document.querySelector('.modal'); 
+  m.querySelector('h3').textContent = p.title ? (p.title + ' — детали проекта') : 'Детали проекта';
+  const hero = m.querySelector('.hero');
+  hero.src = p.img;
+  m.querySelector('.body').innerHTML = `
+    <div class="price">${p.price}</div>
+    <div class="meta">Площадь: ${p.area} • ${p.rooms}</div>
+    <p style="margin-top:10px">${p.lead}</p>
+    <p>${p.desc}</p>
+    <div class="btns"><a class="btn btn--primary" href="#form">Получить сметы</a></div>`;
+  bg.style.display='flex';
+}
+function closeModal(){
+  document.querySelector('.modal-backdrop').style.display='none';
+}
+document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
 
-  // carousel
-  const car=document.getElementById('partners-carousel');
-  if(car){
-    const track=car.querySelector('.car-track');
-    const prev=car.querySelector('.prev'); const next=car.querySelector('.next');
-    prev&&prev.addEventListener('click',()=> track.scrollBy({left:-400,behavior:'smooth'}));
-    next&&next.addEventListener('click',()=> track.scrollBy({left: 400,behavior:'smooth'}));
-  }
-
-  // Delegation (secondary safety net)
-  document.addEventListener('click',(e)=>{
-    const opener=e.target.closest('[data-open]');
-    if(opener){
-      e.preventDefault();
-      const id=opener.getAttribute('data-open');
-      if(id) { window.openModal && window.openModal(id); }
-      return;
-    }
-    const closer=e.target.closest('[data-close]');
-    if(closer){
-      const id=closer.getAttribute('data-close');
-      if(id) { window.closeModal && window.closeModal(id); }
-      return;
-    }
-  });
-
-  // Esc to close
-  document.addEventListener('keydown',(e)=>{
-    if(e.key==='Escape'){
-      document.querySelectorAll('.modal').forEach(m=>m.setAttribute('aria-hidden','true'));
-    }
-  });
-
-  // year
-  const y=document.getElementById('year'); if(y){ y.textContent=(new Date()).getFullYear(); }
-});
+/* form behavior */
+function handleContactChange(){
+  const v = document.getElementById('contact_way').value;
+  const phone = '+79334191597';
+  const tg = 'https://t.me/brigadress';
+  const wa = 'https://wa.me/79334191597';
+  const link = document.getElementById('contact_link');
+  if(v==='tg'){ link.href = tg; link.textContent='Открыть Telegram'; link.style.display='inline-flex'; }
+  else if(v==='wa'){ link.href = wa; link.textContent='Открыть WhatsApp'; link.style.display='inline-flex'; }
+  else if(v==='call'){ link.href = 'tel:' + phone; link.textContent='Позвонить'; link.style.display='inline-flex'; }
+  else { link.removeAttribute('href'); link.style.display='none'; }
+}
