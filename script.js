@@ -3,18 +3,19 @@ const DATA_URL = 'assets/projects.json';
 let DATA = {};
 fetch(DATA_URL).then(r=>r.json()).then(j=>DATA=j);
 
+// Open modal with details
 function openDetails(key){
   const p = DATA[key]; if(!p) return;
   const bg = document.querySelector('.modal-backdrop'); 
   const m = document.querySelector('.modal'); 
-  m.querySelector('h3').textContent = p.title ? (p.title + ' — детали проекта') : 'Детали проекта';
+  m.querySelector('h3').textContent = (p.title || key.replace(/\d+$/,'').toUpperCase()) + ' — детали проекта';
   const hero = m.querySelector('.hero');
   hero.src = p.img;
   m.querySelector('.body').innerHTML = `
     <div class="price">${p.price}</div>
     <div class="meta">Площадь: ${p.area} • ${p.rooms}</div>
-    <p style="margin-top:10px">${p.lead}</p>
-    <p>${p.desc}</p>
+    <p style="margin-top:10px">${p.lead || ''}</p>
+    <p>${p.desc || ''}</p>
     <div class="btns"><a class="btn btn--primary" href="#form">Получить сметы</a></div>`;
   bg.style.display='flex';
 }
@@ -23,7 +24,7 @@ function closeModal(){
 }
 document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
 
-/* form behavior */
+// Contact select
 function handleContactChange(){
   const v = document.getElementById('contact_way').value;
   const phone = '+79334191597';
