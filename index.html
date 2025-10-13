@@ -1,201 +1,212 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>БригАдрес — каркасные дома под ключ</title>
-<meta name="description" content="Каркасные дома под ключ в Нижегородской области. Подберём 3–4 подрядчика и сопроводим до сдачи.">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>БригАдрес — Каркасные дома под ключ</title>
+  <meta name="description" content="Каркасные дома под ключ в Нижегородской области. Подберём 3–4 проверенных подрядчика и сопроводим до сдачи. Договор и контроль качества.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="БригАдрес — Каркасные дома под ключ">
+  <meta property="og:description" content="Каркасные дома под ключ в Нижегородской области. Подберём 3–4 проверенных подрядчика и сопроводим до сдачи.">
+  <meta property="og:image" content="assets/img/projects/barn-123.jpg">
+  <meta property="og:url" content="https://brigadress.ru/">
+  <link rel="icon" href="data:,">
+  <link rel="preload" as="image" href="assets/img/hero/hero.jpg">
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-  <header class="header">
-    <div class="brand">БригАдрес</div>
-    <nav class="topnav">
-      <a href="#projects">Проекты</a>
-      <a href="#partners">Построено</a>
-      <a href="#reviews">Отзывы</a>
-      <a href="#form">Заявка</a>
+<header class="header">
+  <div class="container header__inner">
+    <a class="logo" href="#hero">БригАдрес</a>
+    <nav class="nav">
+      <a href="#projects" class="nav__link">Проекты</a>
+      <a href="#built" class="nav__link">Построено</a>
+      <a href="#reviews" class="nav__link">Отзывы</a>
+      <a href="#contact" class="nav__link">Заявка</a>
     </nav>
-    <a href="tel:+79334191597" class="btn">8 (933) 419-15-97</a>
-  </header>
-
-  <main class="container">
-
-    <!-- Hero -->
-    <section class="section">
-      <h1 class="section-title">Каркасные дома под ключ в Нижегородской области</h1>
-      <p>Подберём 3–4 проверенных подрядчика и сопроводим стройку до сдачи. Бесплатно для вас. Договор и контроль качества.</p>
-      <div class="btns">
-        <a class="btn btn--primary" href="#form">Связаться</a>
-        <a class="btn btn--cta" href="#form">Получить 3–4 предложения</a>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="section" id="projects">
-      <h2 class="section-title">Проект дома вашей мечты</h2>
-      <div class="grid projects">
-        <article class="card">
-          <img class="fit" src="assets/img/projects/barn123.jpg" alt="Барн 123">
-          <h3>Барн 123</h3>
-          <div class="meta">123 м² • 3 спальни, 2 санузла</div>
-          <div class="price">от 4 670 000 ₽</div>
-          <div class="btns">
-            <a class="btn btn--primary" href="#form">Получить сметы</a>
-            <button class="btn" onclick="openDetails('barn123')">Подробнее</button>
-          </div>
-        </article>
-
-        <article class="card">
-          <img class="fit" src="assets/img/projects/loft61.jpg" alt="Лофт 61">
-          <h3>Лофт 61</h3>
-          <div class="meta">61 м² • 2 спальни, 1 санузел</div>
-          <div class="price">от 3 430 000 ₽</div>
-          <div class="btns">
-            <a class="btn btn--primary" href="#form">Получить сметы</a>
-            <button class="btn" onclick="openDetails('loft61')">Подробнее</button>
-          </div>
-        </article>
-
-        <article class="card">
-          <img class="fit" src="assets/img/projects/barn145.jpg" alt="Барн 145">
-          <h3>Барн 145</h3>
-          <div class="meta">145 м² • 4 спальни, 2 санузла</div>
-          <div class="price">от 6 060 000 ₽</div>
-          <div class="btns">
-            <a class="btn btn--primary" href="#form">Получить сметы</a>
-            <button class="btn" onclick="openDetails('barn145')">Подробнее</button>
-          </div>
-        </article>
-
-        <article class="card">
-          <img class="fit" src="assets/img/projects/right103.jpg" alt="Райт 103">
-          <h3>Райт 103</h3>
-          <div class="meta">103 м² • 3 спальни, 2 санузла</div>
-          <div class="price">от 4 740 000 ₽</div>
-          <div class="btns">
-            <a class="btn btn--primary" href="#form">Получить сметы</a>
-            <button class="btn" onclick="openDetails('right103')">Подробнее</button>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Partners carousel -->
-    <section class="section" id="partners">
-      <h2 class="section-title">Построено нашими партнёрами</h2>
-      <div class="carousel">
-        <div class="slide"><img src="assets/img/partners/1.jpg" loading="lazy" alt="Пример"></div><div class="slide"><img src="assets/img/partners/2.jpg" loading="lazy" alt="Пример"></div><div class="slide"><img src="assets/img/partners/3.jpg" loading="lazy" alt="Пример"></div><div class="slide"><img src="assets/img/partners/4.jpg" loading="lazy" alt="Пример"></div><div class="slide"><img src="assets/img/partners/5.jpg" loading="lazy" alt="Пример"></div><div class="slide"><img src="assets/img/partners/6.jpg" loading="lazy" alt="Пример"></div>
-      </div>
-    </section>
-
-    <!-- Own project CTA -->
-    <section class="section card" id="own-project">
-      <h2>Не нашли подходящий проект? Утвердите свой</h2>
-      <p>Соберём предложения под ваш эскиз или планировку, поможем сравнить сметы и согласовать оптимальный вариант.</p>
-      <div class="btns"><a class="btn btn--cta" href="#form">Свой проект</a></div>
-    </section>
-
-    <!-- Accordion Why -->
-    <section class="section" id="why">
-      <h2 class="section-title">Подберём проверенного подрядчика на каркасный дом и сопроводим стройку</h2>
-      <p>БригАдрес — сервис подбора и сопровождения. Мы собираем предложения от разных подрядчиков, помогаем выбрать оптимальное и контролируем качество на этапах.</p>
-      <div class="accordion">
-        <details><summary>1. Быстрый старт и понятные этапы</summary><p>Собираем несколько актуальных предложений под ваш бюджет и участок, вы сразу видите сроки по этапам — от подготовки основания до отделки. Следим, чтобы график не «провисал».</p></details>
-        <details><summary>2. Тёплый, энергоэффективный контур</summary><p>Рекомендуем проверенные решения по утеплению, паро- и ветрозащите, узлам. Контролируем применение заявленных материалов и толщин.</p></details>
-        <details><summary>3. Прозрачные сметы без сюрпризов</summary><p>Сравнение смет «по строкам»: видно, за что платите — фундамент, каркас, кровля, фасад, инженерка. Помогаем убрать лишнее и усилить важное.</p></details>
-        <details><summary>4. Материалы и сборка по стандартам</summary><p>Сверяем спецификацию с поставками, требуем фото/видео-отчёты. Проверяем геометрию, крепёж, узлы примыканий — чтобы дом был прочным и сухим.</p></details>
-        <details><summary>5. Индивидуальные планировки и комплектация</summary><p>Под подрядчика подбираем нужные изменения: кухня‑гостиная, второй свет, терраса, гардеробные, варианты фасада и кровли — без потери качества.</p></details>
-        <details><summary>6. Проверенные подрядчики с портфолио</summary><p>В базе — команды с реальными объектами и отзывами. Оцениваем загруженность бригад и организацию на площадке.</p></details>
-        <details><summary>7. Порядок на участке и уважение к соседям</summary><p>Фиксируем правила хранения материалов, вывоз мусора, безопасное ограждение зоны работ. Следим за соблюдением.</p></details>
-        <details><summary>8. Поддержка после сдачи</summary><p>Не пропадаем после ключей: подскажем по эксплуатации, поможем с мелкими доработками и координацией подрядчика.</p></details>
-      </div>
-    </section>
-
-    <!-- How it works -->
-    <section class="section" id="how">
-      <h2 class="section-title">Как это работает</h2>
-      <div class="steps">
-        <div class="step"><span class="badge">1 день</span><h3>Заявка</h3><p>Заполняете форму → «Оставить заявку».</p></div>
-        <div class="step"><span class="badge">10–15 минут</span><h3>Созвон</h3><p>Уточняем задачи, сроки, комплектацию.</p></div>
-        <div class="step"><span class="badge">48 часов</span><h3>Сметы</h3><p>3 варианта с сопоставимыми комплектами. <a href="#form">Получить сметы</a></p></div>
-        <div class="step"><span class="badge">1 выезд</span><h3>Выезд и договор</h3><p>Осмотр участка/объекта, финализация сметы, фиксируем сроки.</p></div>
-        <div class="step"><span class="badge">до сдачи</span><h3>Стройка и контроль</h3><p>Этапы, фотоотчёты, акт сдачи, гарантия 5 лет.</p></div>
-      </div>
-    </section>
-
-    <!-- Reviews -->
-    <section class="section" id="reviews">
-      <h2 class="section-title">Заказчики о нашем сервисе</h2>
-      <div class="reviews">
-        <article class="review"><img src="assets/img/reviews/1.jpg" alt="Дом"><p>«Отличная работа, прозрачные сметы и контроль качества на каждом этапе. Рекомендую.» — <b>Клиент</b></p></article><article class="review"><img src="assets/img/reviews/2.jpg" alt="Дом"><p>«Отличная работа, прозрачные сметы и контроль качества на каждом этапе. Рекомендую.» — <b>Клиент</b></p></article><article class="review"><img src="assets/img/reviews/3.jpg" alt="Дом"><p>«Отличная работа, прозрачные сметы и контроль качества на каждом этапе. Рекомендую.» — <b>Клиент</b></p></article><article class="review"><img src="assets/img/reviews/4.jpg" alt="Дом"><p>«Отличная работа, прозрачные сметы и контроль качества на каждом этапе. Рекомендую.» — <b>Клиент</b></p></article>
-      </div>
-    </section>
-
-    <!-- Form -->
-    <section class="section" id="form">
-      <h2 class="section-title">Оставьте заявку, чтобы подобрать проект под себя</h2>
-      <div class="note-pills">
-        <span class="note-pill">Документы проверены</span>
-        <span class="note-pill">Сопровождаем до сдачи</span>
-      </div>
-      <form class="form-grid" onsubmit="event.preventDefault(); document.getElementById('contact_link').click();">
-        <input class="input" name="name" placeholder="Ваше имя">
-        <input class="input" name="phone" placeholder="+7 ___ ___-__-__">
-        <select class="select" name="topic">
-          <option>Расчёт проекта</option>
-          <option>Сравнить сметы</option>
-          <option>Подбор подрядчика</option>
-        </select>
-        <select id="contact_way" class="select" onchange="handleContactChange()">
-          <option value="">Как связаться</option>
-          <option value="call">Позвонить</option>
-          <option value="tg">Написать в Telegram</option>
-          <option value="wa">Написать в WhatsApp</option>
-        </select>
-        <a id="contact_link" class="btn btn--primary" style="display:none;align-items:center;justify-content:center;gap:8px">Связаться</a>
-        <button class="submit">Отправить</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
-        <div>
-          <h3>Контакты</h3>
-          <p>8 (933) 419-15-97 • brigadres@mail.ru</p>
-          <p><a class="btn" href="https://t.me/brigadress" target="_blank" rel="noopener">Telegram</a>
-             <a class="btn" href="https://vk.com/brigadress_club" target="_blank" rel="noopener" style="margin-left:8px">VK</a></p>
-        </div>
-        <div>
-          <h3>Документы</h3>
-          <p><a href="https://disk.yandex.ru/d/QJ3SUIqIjdtrEg" target="_blank" rel="noopener">Политика конфиденциальности</a><br>
-             <a href="https://disk.yandex.ru/d/ttlyl_xgB4KdQw" target="_blank" rel="noopener">Публичная оферта</a></p>
-        </div>
-        <div>
-          <h3>Реквизиты</h3>
-          <p>ИНН 470206635264<br>ОГРН 325470400100411</p>
-        </div>
-      </div>
-      <div style="margin-top:8px;color:#7d888f">© БригАдрес</div>
-    </div>
-  </footer>
-
-  <!-- Modal -->
-  <div class="modal-backdrop" onclick="if(event.target===this) closeModal()">
-    <div class="modal">
-      <header>
-        <h3>Детали проекта</h3>
-        <button class="close" onclick="closeModal()">×</button>
-      </header>
-      <div class="content">
-        <img class="hero" src="" alt="Проект">
-        <div class="body"></div>
-      </div>
+    <div class="header__right">
+      <a class="social" href="https://t.me/brigadress" target="_blank" rel="noopener" aria-label="Telegram">TG</a>
+      <a class="social" href="https://vk.com/brigadress" target="_blank" rel="noopener" aria-label="VK">VK</a>
+      <a class="phone badge" href="tel:+79334191597">8 (933) 419-15-97</a>
     </div>
   </div>
+</header>
 
-<script src="script.js"></script>
+<main>
+  <section id="hero" class="hero">
+    <div class="hero__content container">
+      <h1>Каркасные дома под ключ в Нижегородской области</h1>
+      <p>Подберём 3–4 проверенных подрядчика и сопроводим стройку до сдачи. Бесплатно для вас. Договор и контроль качества.</p>
+      <div class="hero__cta">
+        <a class="btn btn--ghost" href="#contact">Связаться</a>
+        <a class="btn btn--primary" href="#contact">Получить 3–4 предложения</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects container">
+    <h2>Проект дома вашей мечты</h2>
+    <div class="cards">
+      <article class="card">
+        <img loading="lazy" src="assets/img/projects/barn-123.jpg" alt="Барн 123" class="card__img">
+        <div class="card__body">
+          <h3>Барн 123</h3>
+          <p>123 м² • 3 спальни • 2 санузла</p>
+          <div class="price">от 4 670 000 ₽</div>
+          <div class="card__actions">
+            <a class="btn btn--secondary" href="#contact">Получить сметы</a>
+            <button class="btn btn--ghost details-btn" data-key="barn123">Подробнее</button>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img loading="lazy" src="assets/img/projects/loft-61.jpg" alt="Лофт 61" class="card__img">
+        <div class="card__body">
+          <h3>Лофт 61</h3>
+          <p>61 м² • 2 спальни • 1 санузел</p>
+          <div class="price">от 3 430 000 ₽</div>
+          <div class="card__actions">
+            <a class="btn btn--secondary" href="#contact">Получить сметы</a>
+            <button class="btn btn--ghost details-btn" data-key="loft61">Подробнее</button>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img loading="lazy" src="assets/img/projects/barn-145.jpg" alt="Барн 145" class="card__img">
+        <div class="card__body">
+          <h3>Барн 145</h3>
+          <p>145 м² • 4 спальни • 2 санузла</p>
+          <div class="price">от 6 060 000 ₽</div>
+          <div class="card__actions">
+            <a class="btn btn--secondary" href="#contact">Получить сметы</a>
+            <button class="btn btn--ghost details-btn" data-key="barn145">Подробнее</button>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img loading="lazy" src="assets/img/projects/rait-103.jpg" alt="Райт 103" class="card__img">
+        <div class="card__body">
+          <h3>Райт 103</h3>
+          <p>103 м² • 3 спальни • 1 санузел</p>
+          <div class="price">от 4 740 000 ₽</div>
+          <div class="card__actions">
+            <a class="btn btn--secondary" href="#contact">Получить сметы</a>
+            <button class="btn btn--ghost details-btn" data-key="rait103">Подробнее</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="built" class="built container">
+    <h2>Построено нашими партнерами</h2>
+    <div class="carousel" data-carousel>
+      <button class="carousel__nav prev" aria-label="Назад">‹</button>
+      <div class="carousel__track">
+        <div class="carousel__slide"><img src="assets/img/partners/partner-1.jpg" alt="Партнёр 1"></div><div class="carousel__slide"><img src="assets/img/partners/partner-2.jpg" alt="Партнёр 2"></div><div class="carousel__slide"><img src="assets/img/partners/partner-3.jpg" alt="Партнёр 3"></div><div class="carousel__slide"><img src="assets/img/partners/partner-4.jpg" alt="Партнёр 4"></div><div class="carousel__slide"><img src="assets/img/partners/partner-5.jpg" alt="Партнёр 5"></div><div class="carousel__slide"><img src="assets/img/partners/partner-6.jpg" alt="Партнёр 6"></div><div class="carousel__slide"><img src="assets/img/partners/partner-7.jpg" alt="Партнёр 7"></div><div class="carousel__slide"><img src="assets/img/partners/partner-8.jpg" alt="Партнёр 8"></div>
+      </div>
+      <button class="carousel__nav next" aria-label="Вперёд">›</button>
+    </div>
+  </section>
+
+  <section id="reviews" class="reviews container">
+    <h2>Заказчики о нашем сервисе</h2>
+    <div class="reviews__grid">
+      <article class="review">
+        <img src="assets/img/reviews/review-1.jpg" alt="Дом клиента" class="review__img">
+        <p>«Выбирали между несколькими подрядчиками — команда БригАдрес быстро предоставила 3 предложения, помогла сравнить сметы и объяснила отличия. Дом сдали вовремя, без доплат. Рекомендуем!» — <b>Алексей, Бор</b></p>
+      </article>
+      <article class="review">
+        <img src="assets/img/reviews/review-2.jpg" alt="Дом клиента" class="review__img">
+        <p>«Понравилась прозрачность: фиксированная цена в договоре, фотоотчёты. Теплоизоляция топ — зимой экономим на отоплении.» — <b>Марина, Нижний Новгород</b></p>
+      </article>
+      <article class="review">
+        <img src="assets/img/reviews/review-3.jpg" alt="Дом клиента" class="review__img">
+        <p>«Подобрали подрядчика под нестандартный участок. Проект доработали, сделали удобные решения по хранению. Работали чисто, после себя всё убрали.» — <b>Игорь, Павлово</b></p>
+      </article>
+      <article class="review">
+        <img src="assets/img/reviews/review-4.jpg" alt="Дом клиента" class="review__img">
+        <p>«От заявки до заселения прошло меньше трёх месяцев. Контроль качества на каждом этапе — видно, что люди переживают за результат.» — <b>Анна, Дзержинск</b></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="contact container">
+    <h2>Оставьте заявку, чтобы подобрать проект под себя</h2>
+    <div class="contact__badges">
+      <span class="badge badge--outline">Документы проверены</span>
+      <span class="badge badge--outline">Сопровождаем до сдачи</span>
+    </div>
+    <div class="contact__wrap">
+      <form id="leadForm" class="form">
+        <label>Имя
+          <input type="text" name="name" placeholder="Ваше имя">
+        </label>
+        <label>Телефон для связи
+          <input type="tel" name="phone" placeholder="+7 ___ ___-__-__">
+        </label>
+        <label>Я хочу получить
+          <select name="need">
+            <option>Расчёт проекта</option>
+            <option>Консультация</option>
+            <option>Сметы</option>
+          </select>
+        </label>
+        <label>Как связаться
+          <select name="contact_way" id="contactWay">
+            <option value="call">Позвонить</option>
+            <option value="tg">Написать в Telegram</option>
+            <option value="wa">Написать в WhatsApp</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn--primary btn--full">Отправить</button>
+        <p class="form__note">Мы ответим в течение дня • Это бесплатно • Без спама</p>
+      </form>
+
+      <aside class="contact__notes">
+        <div class="mini-review">
+          <img src="assets/img/reviews/review-1.jpg" alt="Дом клиента">
+          <div>«Ответили в тот же день!» — <b>Ольга</b></div>
+        </div>
+        <div class="mini-review">
+          <img src="assets/img/reviews/review-2.jpg" alt="Дом клиента">
+          <div>«Помогли сравнить сметы» — <b>Роман</b></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <h4>Контакты</h4>
+      <p><a href="tel:+79334191597">8 (933) 419-15-97</a> • <a href="mailto:brigadres@mail.ru">brigadres@mail.ru</a></p>
+      <p><a href="https://t.me/brigadress" target="_blank" rel="noopener">Telegram</a> • <a href="https://vk.com/brigadress" target="_blank" rel="noopener">ВКонтакте</a></p>
+    </div>
+    <div>
+      <h4>Документы</h4>
+      <p><a href="#">Политика конфиденциальности</a><br><a href="#">Публичная оферта</a></p>
+    </div>
+    <div>
+      <h4>Реквизиты</h4>
+      <p>ИНН 470206635264<br>ОГРН 325470400100411</p>
+    </div>
+  </div>
+  <div class="container footer__copy">© 2025 БригАдрес</div>
+</footer>
+
+<div id="detailsModal" class="modal" hidden>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal__close" aria-label="Закрыть">×</button>
+    <h3 id="modalTitle">Детали проекта</h3>
+    <img id="modalImage" alt="" class="modal__img" src="">
+    <div id="modalContent" class="modal__content"></div>
+    <a class="btn btn--primary" href="#contact">Получить сметы</a>
+  </div>
+</div>
+<div id="modalBackdrop" class="modal__backdrop" hidden></div>
+
+<script src="assets/js/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0%" stop-color="#2A2F36"/><stop offset="100%" stop-color="#1B1F24"/></linearGradient></defs>
+  <rect width="100%" height="100%" fill="url(#g)"/>
+  <g fill="#A6F3A6" font-size="80" font-family="Arial, Helvetica, sans-serif" font-weight="700">
+    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">Партнёр 6</text>
+  </g>
+</svg>
