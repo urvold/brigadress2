@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="32" viewBox="0 0 340 80">
+  <rect x="0" y="10" rx="12" ry="12" width="340" height="60" fill="#111317" stroke="#2ee66f" stroke-width="3"/>
+  <text x="170" y="52" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="34" fill="#2ee66f">БригАдрес</text>
+</svg>
